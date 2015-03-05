@@ -1,0 +1,3243 @@
+<!DOCTYPE html>
+<html>
+  <head>
+  <meta charset="UTF-8">
+  <meta http-equiv="Content-Type" content="text/html;charset=ISO-8859-1">
+    <title>EGOGRAM</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Bootstrap -->
+    <link href="../bootstrap/css/bootstrap.min.css" rel="stylesheet" media="screen">
+   <style>  
+ body { padding: 30px }  
+ form { display: block; margin: 20px auto; border-radius: 10px; padding: 15px }  
+ .progress { position:relative; width: 100%; border: 1px solid #ddd; padding: 1px; border-radius: 3px;height: 50px;
+border-radius: 10px; }  
+ .bar { background: #39B54A !important; width:0%; height:20px; border-radius: 3px; }  
+ .percent { position:absolute; display:inline-block; top:3px; left:48%; }  
+ .mainbox{max-width: 100%;
+background-color: #BAD595;
+border-radius: 30px;
+padding: 20px;
+border: 1px solid lightgray;margin-bottom:10px;}
+ .mainbox.white{max-width: 100%;
+background-color: #FFF;
+border-radius: 30px;
+padding: 20px;
+border: 1px solid lightgray;}
+.buttonradio{
+height:30px !important;
+width:30px !important;
+}
+input[type=submit] {padding:10px 20px; background:#ED1C24; color:white; border:0 none;
+cursor:pointer;
+-webkit-border-radius: 5px;
+border-radius: 5px; font-size: 20px;
+padding: 10px 20px;
+background: #BAD595;
+color: black;
+border-radius: 10px;
+border: 0 none;}
+
+ </style>  
+ <script>
+ function mytermshideable(){
+if (document.getElementById("terms").style.display == "block"){
+   document.getElementById("terms").style.display = "none";}
+  else{
+     document.getElementById("terms").style.display = "block";
+     }
+     }
+     function checker(){
+     for(var i = 1 ; i <= 143 ; i++)
+  {
+      var radios = document.getElementsByName('question-'+i+'-answers');
+      var checked = false;
+      for (var j = 0, length = radios.length; j < length; j++) 
+      {
+
+         if (radios[j].checked) 
+         {
+          checked = true;
+          
+         }
+
+
+       }
+       if(!checked)
+       {
+         alert('Please answer question '+i);
+         return false;
+       }
+}
+
+var x = document.forms["myForm"]["first_name"].value;
+    if (x == null || x == "") {
+        alert("First name must be filled out");
+        return false;
+        }
+        
+        var x = document.forms["myForm"]["email"].value;
+    var atpos = x.indexOf("@");
+    var dotpos = x.lastIndexOf(".");
+    if (atpos< 1 || dotpos<atpos+2 || dotpos+2>=x.length) {
+        alert("Not a valid e-mail address");
+        return false;
+    }
+return true;
+/*var allElems = document.getElementsByTagName('input');
+for (i = 0; i < allElems.length; i++) {
+    if (allElems[i].type == 'radio' && allElems[i].checked == true) {
+    }
+    else{
+    alert ("Please fill in required fields");
+    alert (allElems[i].name);
+    alert (allElems[i].checked);
+    return false;
+    }
+    }
+} */
+}
+ function secondhideable(){
+
+      document.getElementById("second").style.display = "block";
+     
+     }
+     function thirdhideable(){
+           document.getElementById("third").style.display = "block";
+     }
+       function thirdhideable(){
+      if (document.getElementById("third").style.display == "block"){
+   document.getElementById("third").style.display = "none";
+   }
+   else{
+     document.getElementById("third").style.display = "block";
+     }
+     }
+     
+  function myhideable(){
+  
+  if (document.getElementById("hidequiz").style.display == "block"){
+   document.getElementById("hidequiz").style.display = "none";
+   }
+   else{
+     document.getElementById("hidequiz").style.display = "block";
+     }
+ 
+
+ }
+  function myhideable2(){
+  
+  if (document.getElementById("firsttexthide").style.display == "block"){
+   document.getElementById("firsttexthide").style.display = "none";
+   }
+   else{
+     document.getElementById("firsttexthide").style.display = "block";
+     }
+ 
+
+ }
+ </script>
+   <script>
+     function mynumberFunction(){
+ if (document.getElementById("question-1-answers-A").checked){
+ document.getElementById("p1").innerHTML = "1.4%";
+ document.getElementById("bar").style.width="1.4%";
+ }
+  if (document.getElementById("question-2-answers-A").checked){
+ document.getElementById("p1").innerHTML = "2.8%";
+ document.getElementById("bar").style.width="2.8%";
+ }
+ if (document.getElementById("question-3-answers-A").checked){
+ document.getElementById("p1").innerHTML = "3.5%";
+ document.getElementById("bar").style.width="3.5%";
+ }
+ if (document.getElementById("question-4-answers-A").checked){
+ document.getElementById("p1").innerHTML = "4.2%";
+ document.getElementById("bar").style.width="4.2%";
+ }
+  if (document.getElementById("question-5-answers-A").checked){
+ document.getElementById("p1").innerHTML = "5.6%";
+ document.getElementById("bar").style.width="5.6%";
+ }
+  if (document.getElementById("question-6-answers-A").checked){
+ document.getElementById("p1").innerHTML = "7%";
+ document.getElementById("bar").style.width="7%";
+ }
+ if (document.getElementById("question-7-answers-A").checked){
+ document.getElementById("p1").innerHTML = "8.4%";
+ document.getElementById("bar").style.width="8.4%";
+ }
+  if (document.getElementById("question-8-answers-A").checked){
+ document.getElementById("p1").innerHTML = "9.8%";
+ document.getElementById("bar").style.width="9.8%";
+ }
+  if (document.getElementById("question-9-answers-A").checked){
+ document.getElementById("p1").innerHTML = "11.2%";
+ document.getElementById("bar").style.width="11.2%";
+ }
+ if (document.getElementById("question-10-answers-A").checked){
+ document.getElementById("p1").innerHTML = "12.6%";
+ document.getElementById("bar").style.width="12.6%";
+ }
+  if (document.getElementById("question-11-answers-A").checked){
+ document.getElementById("p1").innerHTML = "14%";
+ document.getElementById("bar").style.width="14%";
+ }
+  if (document.getElementById("question-12-answers-A").checked){
+ document.getElementById("p1").innerHTML = "15.4%";
+ document.getElementById("bar").style.width="15.4%";
+ }
+ if (document.getElementById("question-13-answers-A").checked){
+ document.getElementById("p1").innerHTML = "16.8%";
+ document.getElementById("bar").style.width="16.8%";
+ }
+  if (document.getElementById("question-14-answers-A").checked){
+ document.getElementById("p1").innerHTML = "18.2%";
+ document.getElementById("bar").style.width="18.2%";
+ }
+  if (document.getElementById("question-15-answers-A").checked){
+ document.getElementById("p1").innerHTML = "19.6%";
+ document.getElementById("bar").style.width="19.6%";
+ }
+ if (document.getElementById("question-16-answers-A").checked){
+ document.getElementById("p1").innerHTML = "21%";
+ document.getElementById("bar").style.width="21%";
+ }
+  if (document.getElementById("question-17-answers-A").checked){
+ document.getElementById("p1").innerHTML = "22.4%";
+ document.getElementById("bar").style.width="22.4%";
+ }
+  if (document.getElementById("question-18-answers-A").checked){
+ document.getElementById("p1").innerHTML = "23.8%";
+ document.getElementById("bar").style.width="23.8%";
+ }
+ if (document.getElementById("question-19-answers-A").checked){
+ document.getElementById("p1").innerHTML = "25.2%";
+ document.getElementById("bar").style.width="25.2%";
+ }
+
+
+ }
+ 
+ </script>
+  </head>
+  <body>
+  <h1 style = "text-align: center;
+color: #BAD595;"> EGOGRAM </h1>
+     <div class="progress" style = "display:none;">  
+     <div class="bar" id = "bar" style = "width:0%"></div>  
+     <div id = "p1" class="percent">0%</div>  
+   </div>  
+   
+     <div id ="hidetext">
+<p style = "font-size: 20px;
+font-family: sans-serif;
+color: gray;
+text-align: justify;
+line-height: 1.5;">Vitajte pri vašom Egograme! </br>
+</br>
+Ďakujeme, že ste investovali do seba a ceníme si vašu dôveru.</br>
+</br>
+ Egogram je test, ktorý Vám slúži ako nástroj sebapoznania. Berte ho ako svoje osobnostné zrkadlo. Po zodpovedaní otázok zistíte aké množstvo emotívnej energie máte naviazané na vaše jednotlivé fázy vývinu od útleho detstva až po dospelosť, na takzvané egostavy. </br>
+ </br>
+ Po absolvovaní testu rozpoznáte prečo vás niektoré veci zásadne vždy nahnevajú a iné nechajú ľahostajnými. Pochopíte lepšie svoje podvedomé reakcie a ľahšie ich odčítate aj na druhých. Zistíte, v ktorej duševnej polohe ste najviac citliví voči podnetom okolia. Zmapovanie vašich špecifických egostavov je kľúčom k pochopeniu samého seba. Pomôžu vám uvedomiť si vlastné správanie aj možnosti zmeny, ktoré sme schopní spraviť my všetci bez ohľadu na vek či vzdelanie. 
+ </br>
+ </br>
+ Každý z nás má možnosť stať sa lepším človekom!
+ </p>
+ <br>
+ <br>
+ 
+ <div style = "text-align:center; margin-bottom:20px;">
+<a style = "font-size:20px;padding: 10px 20px;
+background: #BAD595;
+color: black;border-radius: 10px;
+border: 0 none;" href = "#first" id = "showquiz" onclick="myhideable2()">Viac informácii</a></div>
+
+<div style = "display:none;" id = "firsttexthide">
+<p style = "font-size: 16px;
+font-family: sans-serif;
+color: gray;
+text-align: justify;
+line-height: 1.5;">Test vám zaberie približne 20 až 30 minút času. Potrebujete k nemu už len pokoj, aby ste sa mohli zamýšľať nad sebou bez prerušenia. Na otázky odpovedajte spontánne a nesnažte sa v teste "uspieť" hľadaním "správnych odpovedí " intelektuálnou analýzou. Skôr sa nechajte viezť pocitovo vnútorným hlasom. Test sa nedá opakovať, preto vám ho odporúčame dokončiť keď ste ho začali. 
+</br>
+</br>
+Tak ako neexistujú správne odpovede na podnety vo vašom živote, tak neexistuje ani dobrý či zlý výsledkok Egogramu.<br>
+</p><p style = "font-size: 16px;
+font-family: sans-serif;
+color: gray;
+text-align: justify;
+line-height: 1.5;"> Na konci testu budete môcť poplatok zaplatiť prostredníctvom platobnej brány TrustPay vašou platobnou kartou alebo prevodom na účet. Uvedená cena je vrátane DPH. </p>
+
+</p><p style = "font-size: 22px;
+font-family: sans-serif;
+color: gray;
+text-align: justify;
+line-height: 1.5;"> Vyhodnotenie vášho Egogram testu je spoplatnené sumou <b> 11,50 Eur. </b> </p>
+<br>
+<div style = "text-align:center; margin-bottom:20px;">
+<a style = "font-size:20px;padding: 10px 20px;
+background: #BAD595;
+color: black;border-radius: 10px;
+border: 0 none;" href = "#first" id = "showquiz" onclick="myhideable()">Začnite test</a></div></div>
+<div id = "hidequiz" style = "display:none;">
+<form action="grade.php" onsubmit="return checker()" name = "myForm" method="post" id="quiz"">
+<div id = "first" class = "first">
+<h2>Škála I.</h2>
+ <div class = "mainbox row">
+    <h3>Viem dobre počúvať. </h3>
+   
+    <div class = "span1">
+        <input class = "buttonradio" type="radio" name="question-1-answers" id="question-1-answers-A" value="Aa" />
+    </div>
+     <div class = "span2">
+     <label for="question-1-answers-A">Skôr súhlasím</label>
+         </div>
+
+    <div class = "span1">
+        <input class = "buttonradio" type="radio" name="question-1-answers" id="question-1-answers-B" value="B" />
+      
+    </div>
+  
+       <div class = "span2">
+        
+        <label for="question-1-answers-B">Skôr nesúhlasím</label>
+    </div>
+   </div>
+     <div class = "mainbox row white">
+    <h3>Mám sklon „udávať tón“ v skupine. </h3>
+   
+    <div class = "span1">
+        <input class = "buttonradio" type="radio" name="question-2-answers" id="question-2-answers-A" onclick="mynumberFunction()" value="Axa" />
+    </div>
+     <div class = "span2">
+     <label for="question-1-answers-A">Skôr súhlasím</label>
+         </div>
+
+    <div class = "span1">
+        <input class = "buttonradio" type="radio" name="question-2-answers" id="question-2-answers-B" value="B" />
+      
+    </div>
+       <div class = "span2">
+        
+        <label for="question-1-answers-B">Skôr nesúhlasím</label>
+    </div>
+    </div>
+
+ <div class = "mainbox row">
+    <h3>Odporujem ostatným.  </h3>
+   
+    <div class = "span1">
+        <input class = "buttonradio" type="radio" name="question-3-answers" id="question-3-answers-A" onclick="mynumberFunction()" value="Axa" />
+    </div>
+     <div class = "span2">
+     <label for="question-1-answers-A">Skôr súhlasím</label>
+         </div>
+
+    <div class = "span1">
+        <input class = "buttonradio" type="radio" name="question-3-answers" id="question-3-answers-B" value="B" />
+      
+    </div>
+       <div class = "span2">
+        
+        <label for="question-1-answers-B">Skôr nesúhlasím</label>
+    </div>
+    </div>
+     <div class = "mainbox row white">
+    <h3>Často stojím na strane tých slabších.  </h3>
+   
+    <div class = "span1">
+        <input class = "buttonradio" type="radio" name="question-4-answers" id="question-4-answers-A" onclick="mynumberFunction()"value="Aa" />
+    </div>
+     <div class = "span2">
+     <label for="question-1-answers-A">Skôr súhlasím</label>
+         </div>
+
+    <div class = "span1">
+        <input class = "buttonradio" type="radio" name="question-4-answers" id="question-4-answers-B" value="B" />
+      
+    </div>
+       <div class = "span2">
+        
+        <label for="question-1-answers-B">Skôr nesúhlasím</label>
+    </div>
+    </div>
+
+ <div class = "mainbox row">
+    <h3>Bez práce nie sú koláče.  </h3>
+   
+    <div class = "span1">
+        <input class = "buttonradio" type="radio" name="question-5-answers" id="question-5-answers-A"onclick="mynumberFunction()" value="Aa" />
+    </div>
+     <div class = "span2">
+     <label for="question-1-answers-A">Skôr súhlasím</label>
+         </div>
+
+    <div class = "span1">
+        <input class = "buttonradio" type="radio" name="question-5-answers" id="question-5-answers-B" value="B" />
+      
+    </div>
+       <div class = "span2">
+        
+        <label for="question-1-answers-B">Skôr nesúhlasím</label>
+    </div>
+    </div>
+     <div class = "mainbox row white">
+    <h3> Keď som pri výmene názorov zatlačený do kúta, reagujem nahnevane. </h3>
+   
+    <div class = "span1">
+        <input class = "buttonradio" type="radio" name="question-6-answers" id="question-6-answers-A" onclick="mynumberFunction()"value="Axa" />
+    </div>
+     <div class = "span2">
+     <label for="question-1-answers-A">Skôr súhlasím</label>
+         </div>
+
+    <div class = "span1">
+        <input class = "buttonradio" type="radio" name="question-6-answers" id="question-6-answers-B" value="B" />
+      
+    </div>
+       <div class = "span2">
+        
+        <label for="question-1-answers-B">Skôr nesúhlasím</label>
+    </div>
+    </div>
+
+ <div class = "mainbox row">
+    <h3>Súhlasím s tvrdením „Dôveruj, ale preveruj“. </h3>
+   
+    <div class = "span1">
+        <input class = "buttonradio" type="radio" name="question-7-answers" id="question-7-answers-A" onclick="mynumberFunction()"value="Aa" />
+    </div>
+     <div class = "span2">
+     <label for="question-1-answers-A">Skôr súhlasím</label>
+         </div>
+
+    <div class = "span1">
+        <input class = "buttonradio" type="radio" name="question-7-answers" id="question-7-answers-B" value="B" />
+      
+    </div>
+       <div class = "span2">
+        
+        <label for="question-1-answers-B">Skôr nesúhlasím</label>
+    </div>
+    </div>
+     <div class = "mainbox row white">
+    <h3>Nech robíš, čo robíš, charakter človeka nezmeníš. </h3>
+   
+    <div class = "span1">
+        <input class = "buttonradio" type="radio" name="question-8-answers" id="question-8-answers-A" onclick="mynumberFunction()"value="Axa" />
+    </div>
+     <div class = "span2">
+     <label for="question-1-answers-A">Skôr súhlasím</label>
+         </div>
+
+    <div class = "span1">
+        <input class = "buttonradio" type="radio" name="question-8-answers" id="question-8-answers-B"  value="B" />
+      
+    </div>
+       <div class = "span2">
+        
+        <label for="question-1-answers-B">Skôr nesúhlasím</label>
+    </div>
+    </div>
+
+ <div class = "mainbox row">
+    <h3>V zložitých situáciách preberám vedenie. </h3>
+   
+    <div class = "span1">
+        <input class = "buttonradio" type="radio" name="question-9-answers" id="question-9-answers-A"onclick="mynumberFunction()" value="Axa" />
+    </div>
+     <div class = "span2">
+     <label for="question-9-answers-A">Skôr súhlasím</label>
+         </div>
+
+    <div class = "span1">
+        <input class = "buttonradio" type="radio" name="question-9-answers" id="question-9-answers-B" value="B" />
+      
+    </div>
+       <div class = "span2">
+        
+        <label for="question-1-answers-B">Skôr nesúhlasím</label>
+    </div>
+    </div>
+     <div class = "mainbox row white">
+    <h3>Ľahko iných uteším. </h3>
+   
+    <div class = "span1">
+        <input class = "buttonradio" type="radio" name="question-10-answers" id="question-10-answers-A" onclick="mynumberFunction()"value="Aa" />
+    </div>
+     <div class = "span2">
+     <label for="question-1-answers-A">Skôr súhlasím</label>
+         </div>
+
+    <div class = "span1">
+        <input class = "buttonradio" type="radio" name="question-10-answers" id="question-10-answers-B" value="B" />
+      
+    </div>
+       <div class = "span2">
+        
+        <label for="question-1-answers-B">Skôr nesúhlasím</label>
+    </div>
+    </div>
+
+ <div class = "mainbox row">
+    <h3>Častejšie, ako by som chcel, hľadám chybu u ostatných. </h3>
+   
+    <div class = "span1">
+        <input class = "buttonradio" type="radio" name="question-11-answers" id="question-11-answers-A" onclick="mynumberFunction()"value="Axa" />
+    </div>
+     <div class = "span2">
+     <label for="question-1-answers-A">Skôr súhlasím</label>
+         </div>
+
+    <div class = "span1">
+        <input class = "buttonradio" type="radio" name="question-11-answers" id="question-11-answers-B" value="B" />
+      
+    </div>
+       <div class = "span2">
+        
+        <label for="question-1-answers-B">Skôr nesúhlasím</label>
+    </div>
+    </div>
+     <div class = "mainbox row white">
+    <h3>Väčšina ľudí chce byť vedená. </h3>
+   
+    <div class = "span1">
+        <input class = "buttonradio" type="radio" name="question-12-answers" id="question-12-answers-A" onclick="mynumberFunction()"value="Aa" />
+    </div>
+     <div class = "span2">
+     <label for="question-1-answers-A">Skôr súhlasím</label>
+         </div>
+
+    <div class = "span1">
+        <input class = "buttonradio" type="radio" name="question-12-answers" id="question-12-answers-B" value="B" />
+      
+    </div>
+       <div class = "span2">
+        
+        <label for="question-1-answers-B">Skôr nesúhlasím</label>
+    </div>
+    </div>
+
+ <div class = "mainbox row">
+    <h3>Každá práca je zložitá, preto by sa malo v nej ľuďom pomáhať. </h3>
+   
+    <div class = "span1">
+        <input class = "buttonradio" type="radio" name="question-13-answers" id="question-13-answers-A" onclick="mynumberFunction()"value="Aa" />
+    </div>
+     <div class = "span2">
+     <label for="question-13-answers-A">Skôr súhlasím</label>
+         </div>
+
+    <div class = "span1">
+        <input class = "buttonradio" type="radio" name="question-13-answers" id="question-13-answers-B"onclick="mynumberFunction()" value="B" />
+      
+    </div>
+       <div class = "span2">
+        
+        <label for="question-1-answers-B">Skôr nesúhlasím</label>
+    </div>
+    </div>
+     <div class = "mainbox row white">
+    <h3>Keď majú ostatní problémy, mám pre nich porozumenie.. </h3>
+   
+    <div class = "span1">
+        <input class = "buttonradio" type="radio" name="question-14-answers" id="question-14-answers-A" onclick="mynumberFunction()"value="Aa" />
+    </div>
+     <div class = "span2">
+     <label for="question-1-answers-A">Skôr súhlasím</label>
+         </div>
+
+    <div class = "span1">
+        <input class = "buttonradio" type="radio" name="question-14-answers" id="question-14-answers-B" value="B" />
+      
+    </div>
+       <div class = "span2">
+        
+        <label for="question-1-answers-B">Skôr nesúhlasím</label>
+    </div>
+    </div>
+
+ <div class = "mainbox row">
+    <h3>Ťažko mením svoje presvedčenie. </h3>
+   
+    <div class = "span1">
+        <input class = "buttonradio" type="radio" name="question-15-answers" id="question-15-answers-A" onclick="mynumberFunction()"value="Axa" />
+    </div>
+     <div class = "span2">
+     <label for="question-1-answers-A">Skôr súhlasím</label>
+         </div>
+
+    <div class = "span1">
+        <input class = "buttonradio" type="radio" name="question-15-answers" id="question-15-answers-B" value="B" />
+      
+    </div>
+       <div class = "span2">
+        
+        <label for="question-1-answers-B">Skôr nesúhlasím</label>
+    </div>
+    </div>
+     <div class = "mainbox row white">
+    <h3>Treba si uvedomiť rasové rozdiely a zabrániť zmiešaným sobášom. </h3>
+   
+    <div class = "span1">
+        <input class = "buttonradio" type="radio" name="question-16-answers" id="question-16-answers-A" onclick="mynumberFunction()"value="Axa" />
+    </div>
+     <div class = "span2">
+     <label for="question-1-answers-A">Skôr súhlasím</label>
+         </div>
+
+    <div class = "span1">
+        <input class = "buttonradio" type="radio" name="question-16-answers" id="question-16-answers-B" value="B" />
+      
+    </div>
+       <div class = "span2">
+        
+        <label for="question-1-answers-B">Skôr nesúhlasím</label>
+    </div>
+    </div>
+
+ <div class = "mainbox row">
+    <h3>Skutočnú zmenu možno dosiahnuť iba vtedy, ak sa veci ujme silná osobnosť. </h3>
+   
+    <div class = "span1">
+        <input class = "buttonradio" type="radio" name="question-17-answers" id="question-17-answers-A" onclick="mynumberFunction()"value="Aa" />
+    </div>
+     <div class = "span2">
+     <label for="question-17-answers-A">Skôr súhlasím</label>
+         </div>
+
+    <div class = "span1">
+        <input class = "buttonradio" type="radio" name="question-17-answers" id="question-17-answers-B" value="B" />
+      
+    </div>
+       <div class = "span2">
+        
+        <label for="question-1-answers-B">Skôr nesúhlasím</label>
+    </div>
+    </div>
+    <div class = "mainbox row white">
+    <h3>Vo svojom živote sa spolieham na tradície.  </h3>
+   
+    <div class = "span1">
+        <input class = "buttonradio" type="radio" name="question-18-answers" id="question-18-answers-A" onclick="mynumberFunction()"value="Axa" />
+    </div>
+     <div class = "span2">
+     <label for="question-1-answers-A">Skôr súhlasím</label>
+         </div>
+
+    <div class = "span1">
+        <input class = "buttonradio" type="radio" name="question-18-answers" id="question-18-answers-B" value="B" />
+      
+    </div>
+       <div class = "span2">
+        
+        <label for="question-1-answers-B">Skôr nesúhlasím</label>
+    </div>
+    </div>
+
+     <div class = "mainbox row white">
+    <h3>Hnevajú ma ľudia, ktorí spochybňujú osvedčené a uznávané myšlienky.  </h3>
+   
+    <div class = "span1">
+        <input class = "buttonradio" type="radio" name="question-19-answers" id="question-18-answers-A" onclick="mynumberFunction()"value="Axa" />
+    </div>
+     <div class = "span2">
+     <label for="question-1-answers-A">Skôr súhlasím</label>
+         </div>
+
+    <div class = "span1">
+        <input class = "buttonradio" type="radio" name="question-19-answers" id="question-19-answers-B" value="B" />
+      
+    </div>
+       <div class = "span2">
+        
+        <label for="question-1-answers-B">Skôr nesúhlasím</label>
+    </div>
+    </div>
+
+ <div class = "mainbox row">
+    <h3>Menšinám sa venuje viac pozornosti ako si zaslúžia. </h3>
+   
+    <div class = "span1">
+        <input class = "buttonradio" type="radio" name="question-20-answers" id="question-20-answers-A" onclick="mynumberFunction()"value="Axa" />
+    </div>
+     <div class = "span2">
+     <label for="question-1-answers-A">Skôr súhlasím</label>
+         </div>
+
+    <div class = "span1">
+        <input class = "buttonradio" type="radio" name="question-20-answers" id="question-20-answers-B" value="B" />
+      
+    </div>
+       <div class = "span2">
+        
+        <label for="question-1-answers-B">Skôr nesúhlasím</label>
+    </div>
+    </div>
+     <div class = "mainbox row white">
+    <h3>Súhlasím s názorom politika: „Nemôžeme sa strkať každému do zadku.“ </h3>
+   
+    <div class = "span1">
+        <input class = "buttonradio" type="radio" name="question-21-answers" id="question-21-answers-A" onclick="mynumberFunction()"value="Axa" />
+    </div>
+     <div class = "span2">
+     <label for="question-1-answers-A">Skôr súhlasím</label>
+         </div>
+
+    <div class = "span1">
+        <input class = "buttonradio" type="radio" name="question-21-answers" id="question-21-answers-B" value="B" />
+      
+    </div>
+       <div class = "span2">
+        
+        <label for="question-1-answers-B">Skôr nesúhlasím</label>
+    </div>
+    </div>
+
+     <div class = "mainbox row white">
+    <h3>Súhlasím s myšlienkou, že ľudia by mali byť ľudskejší a viac humánni. </h3>
+   
+    <div class = "span1">
+        <input class = "buttonradio" type="radio" name="question-22-answers" id="question-22-answers-A" onclick="mynumberFunction()"value="Aa" />
+    </div>
+     <div class = "span2">
+     <label for="question-1-answers-A">Skôr súhlasím</label>
+         </div>
+
+    <div class = "span1">
+        <input class = "buttonradio" type="radio" name="question-22-answers" id="question-22-answers-B" value="B" />
+      
+    </div>
+       <div class = "span2">
+        
+        <label for="question-1-answers-B">Skôr nesúhlasím</label>
+    </div>
+    </div>
+
+ <div class = "mainbox row">
+    <h3>Ostatní ma často žiadajú o radu.</h3>
+   
+    <div class = "span1">
+        <input class = "buttonradio" type="radio" name="question-23-answers" id="question-23-answers-A"onclick="mynumberFunction()" value="Aa" />
+    </div>
+     <div class = "span2">
+     <label for="question-13-answers-A">Skôr súhlasím</label>
+         </div>
+
+    <div class = "span1">
+        <input class = "buttonradio" type="radio" name="question-23-answers" id="question-23-answers-B" value="B" />
+      
+    </div>
+       <div class = "span2">
+        
+        <label for="question-1-answers-B">Skôr nesúhlasím</label>
+    </div>
+    </div>
+     <div class = "mainbox row white">
+    <h3>To, že sme často kontrolovaní, je preto, že je málo ľudí na prácu a veľa ľudí chce 
+
+rozkazovať. </h3>
+   
+    <div class = "span1">
+        <input class = "buttonradio" type="radio" name="question-24-answers" id="question-24-answers-A"onclick="mynumberFunction()" value="Axa" />
+    </div>
+     <div class = "span2">
+     <label for="question-1-answers-A">Skôr súhlasím</label>
+         </div>
+
+    <div class = "span1">
+        <input class = "buttonradio" type="radio" name="question-24-answers" id="question-24-answers-B" value="B" />
+      
+    </div>
+       <div class = "span2">
+        
+        <label for="question-1-answers-B">Skôr nesúhlasím</label>
+    </div>
+    </div>
+
+ <div class = "mainbox row">
+    <h3>Súhlasím s tvrdením: „Čo sa za mlada naučíš, na starosť ako by si našiel.“ </h3>
+   
+    <div class = "span1">
+        <input class = "buttonradio" type="radio" name="question-25-answers" id="question-25-answers-A" onclick="mynumberFunction()"value="Axa" />
+    </div>
+     <div class = "span2">
+     <label for="question-1-answers-A">Skôr súhlasím</label>
+         </div>
+
+    <div class = "span1">
+        <input class = "buttonradio" type="radio" name="question-25-answers" id="question-25-answers-B" value="B" />
+      
+    </div>
+       <div class = "span2">
+        
+        <label for="question-1-answers-B">Skôr nesúhlasím</label>
+    </div>
+    </div>
+     <div class = "mainbox row white">
+    <h3>Mnohým ľuďom nie je doteraz jasné, že ak chcú byť úspešní, musia bojovať. </h3>
+   
+    <div class = "span1">
+        <input class = "buttonradio" type="radio" name="question-26-answers" id="question-26-answers-A" value="Axa" />
+    </div>
+     <div class = "span2">
+     <label for="question-1-answers-A">Skôr súhlasím</label>
+         </div>
+
+    <div class = "span1">
+        <input class = "buttonradio" type="radio" name="question-26-answers" id="question-26-answers-B" value="B" />
+      
+    </div>
+       <div class = "span2">
+        
+        <label for="question-1-answers-B">Skôr nesúhlasím</label>
+    </div>
+    </div>
+
+ <div class = "mainbox row">
+    <h3>Ľudí treba donútiť, aby robili veci, ktoré sú pre nich dobré. </h3>
+   
+    <div class = "span1">
+        <input class = "buttonradio" type="radio" name="question-27-answers" id="question-27-answers-A" value="Aa" />
+    </div>
+     <div class = "span2">
+     <label for="question-17-answers-A">Skôr súhlasím</label>
+         </div>
+
+    <div class = "span1">
+        <input class = "buttonradio" type="radio" name="question-27-answers" id="question-27-answers-B" value="B" />
+      
+    </div>
+       <div class = "span2">
+        
+        <label for="question-1-answers-B">Skôr nesúhlasím</label>
+    </div>
+    </div>
+     <div class = "mainbox row white">
+    <h3>Myslím si, že naša spoločnosť by bola zdravšia, keby sa nedodržanie zákonov trestalo 
+
+tvrdšie.</h3>
+   
+    <div class = "span1">
+        <input class = "buttonradio" type="radio" name="question-28-answers" id="question-28-answers-A" value="Axa" />
+    </div>
+     <div class = "span2">
+     <label for="question-1-answers-A">Skôr súhlasím</label>
+         </div>
+
+    <div class = "span1">
+        <input class = "buttonradio" type="radio" name="question-28-answers" id="question-28-answers-B" value="B" />
+      
+    </div>
+       <div class = "span2">
+        
+        <label for="question-1-answers-B">Skôr nesúhlasím</label>
+    </div>
+    </div>
+
+ <div class = "mainbox row">
+    <h3>Zastávam názor, že žena patrí do domácnosti. </h3>
+   
+    <div class = "span1">
+        <input class = "buttonradio" type="radio" name="question-29-answers" id="question-29-answers-A" value="Axa" />
+    </div>
+     <div class = "span2">
+     <label for="question-1-answers-A">Skôr súhlasím</label>
+         </div>
+
+    <div class = "span1">
+        <input class = "buttonradio" type="radio" name="question-29-answers" id="question-29-answers-B" value="B" />
+      
+    </div>
+       <div class = "span2">
+        
+        <label for="question-1-answers-B">Skôr nesúhlasím</label>
+    </div>
+    </div>
+     <div class = "mainbox row white">
+    <h3>Myslím si, že dôverujem ľuďom viac ako ostatní. </h3>
+   
+    <div class = "span1">
+        <input class = "buttonradio" type="radio" name="question-30-answers" id="question-30-answers-A" value="Aa" />
+    </div>
+     <div class = "span2">
+     <label for="question-1-answers-A">Skôr súhlasím</label>
+         </div>
+
+    <div class = "span1">
+        <input class = "buttonradio" type="radio" name="question-30-answers" id="question-30-answers-B" value="B" />
+      
+    </div>
+       <div class = "span2">
+        
+        <label for="question-1-answers-B">Skôr nesúhlasím</label>
+    </div>
+    </div>
+
+ <div class = "mainbox row">
+    <h3>Sú situácie, keď treba dieťa potrestať poriadnym výpraskom. </h3>
+   
+    <div class = "span1">
+        <input class = "buttonradio" type="radio" name="question-31-answers" id="question-31-answers-A" value="Aa" />
+    </div>
+     <div class = "span2">
+     <label for="question-1-answers-A">Skôr súhlasím</label>
+         </div>
+
+    <div class = "span1">
+        <input class = "buttonradio" type="radio" name="question-31-answers" id="question-31-answers-B" value="B" />
+      
+    </div>
+       <div class = "span2">
+        
+        <label for="question-1-answers-B">Skôr nesúhlasím</label>
+    </div>
+    </div>
+     <div class = "mainbox row white">
+    <h3>Najväčšou pohromou, ktorá sa môže niekomu stať, je stratiť trpezlivosť. </h3>
+   
+    <div class = "span1">
+        <input class = "buttonradio" type="radio" name="question-32-answers" id="question-32-answers-A" value="Aa" />
+    </div>
+     <div class = "span2">
+     <label for="question-1-answers-A">Skôr súhlasím</label>
+         </div>
+
+    <div class = "span1">
+        <input class = "buttonradio" type="radio" name="question-32-answers" id="question-32-answers-B" value="B" />
+      
+    </div>
+       <div class = "span2">
+        
+        <label for="question-1-answers-B">Skôr nesúhlasím</label>
+    </div>
+    </div>
+
+ <div class = "mainbox row">
+    <h3>Prísne tresty sú nato, aby odradili od porušovania zákonov. </h3>
+   
+    <div class = "span1">
+        <input class = "buttonradio" type="radio" name="question-33-answers" id="question-33-answers-A" value="Aa" />
+    </div>
+     <div class = "span2">
+     <label for="question-33-answers-A">Skôr súhlasím</label>
+         </div>
+
+    <div class = "span1">
+        <input class = "buttonradio" type="radio" name="question-33-answers" id="question-33-answers-B" value="B" />
+      
+    </div>
+       <div class = "span2">
+        
+        <label for="question-1-answers-B">Skôr nesúhlasím</label>
+    </div>
+    </div>
+     <div class = "mainbox row white">
+    <h3>Ak niekto potrebuje pomoc, tak mu ju poskytnem. </h3>
+   
+    <div class = "span1">
+        <input class = "buttonradio" type="radio" name="question-34-answers" id="question-34-answers-A" value="Aa" />
+    </div>
+     <div class = "span2">
+     <label for="question-1-answers-A">Skôr súhlasím</label>
+         </div>
+
+    <div class = "span1">
+        <input class = "buttonradio" type="radio" name="question-34-answers" id="question-34-answers-B" value="B" />
+      
+    </div>
+       <div class = "span2">
+        
+        <label for="question-1-answers-B">Skôr nesúhlasím</label>
+    </div>
+    </div>
+
+ <div class = "mainbox row">
+    <h3>Všetci vychovávatelia a rodičia sú dnes veľmi zhovievaví.</h3>
+   
+    <div class = "span1">
+        <input class = "buttonradio" type="radio" name="question-35-answers" id="question-35-answers-A" value="Aa" />
+    </div>
+     <div class = "span2">
+     <label for="question-1-answers-A">Skôr súhlasím</label>
+         </div>
+
+    <div class = "span1">
+        <input class = "buttonradio" type="radio" name="question-35-answers" id="question-35-answers-B" value="B" />
+      
+    </div>
+       <div class = "span2">
+        
+        <label for="question-1-answers-B">Skôr nesúhlasím</label>
+    </div>
+    </div>
+     <div class = "mainbox row white">
+    <h3>Veľmi rád podporujem niekoho v jeho rozvoji. </h3>
+   
+    <div class = "span1">
+        <input class = "buttonradio" type="radio" name="question-36-answers" id="question-36-answers-A" value="Aa" />
+    </div>
+     <div class = "span2">
+     <label for="question-1-answers-A">Skôr súhlasím</label>
+         </div>
+
+    <div class = "span1">
+        <input class = "buttonradio" type="radio" name="question-36-answers" id="question-36-answers-B" value="B" />
+      
+    </div>
+       <div class = "span2">
+        
+        <label for="question-1-answers-B">Skôr nesúhlasím</label>
+    </div>
+    </div>
+
+ <div class = "mainbox row">
+    <h3>Médiá by mali byť viac kontrolované. </h3>
+   
+    <div class = "span1">
+        <input class = "buttonradio" type="radio" name="question-37-answers" id="question-37-answers-A" value="Axa" />
+    </div>
+     <div class = "span2">
+     <label for="question-37-answers-A">Skôr súhlasím</label>
+         </div>
+
+    <div class = "span1">
+        <input class = "buttonradio" type="radio" name="question-37-answers" id="question-37-answers-B" value="B" />
+      
+    </div>
+       <div class = "span2">
+        
+        <label for="question-1-answers-B">Skôr nesúhlasím</label>
+    </div>
+    </div>
+     <div class = "mainbox row white">
+    <h3>Nemôžem pochopiť, ako môže niekto spáchať samovraždu. </h3>
+   
+    <div class = "span1">
+        <input class = "buttonradio" type="radio" name="question-38-answers" id="question-38-answers-A" value="Axa" />
+    </div>
+     <div class = "span2">
+     <label for="question-1-answers-A">Skôr súhlasím</label>
+         </div>
+
+    <div class = "span1">
+        <input class = "buttonradio" type="radio" name="question-38-answers" id="question-38-answers-B" value="B" />
+      
+    </div>
+       <div class = "span2">
+        
+        <label for="question-1-answers-B">Skôr nesúhlasím</label>
+    </div>
+    </div>
+
+ <div class = "mainbox row">
+    <h3>Jedným z dôvodov, prečo je reklama úspešná, je fakt, že ľudia sú radi, ak im niekto povie, čo majú kupovať. </h3>
+   
+    <div class = "span1">
+        <input class = "buttonradio" type="radio" name="question-39-answers" id="question-39-answers-A" value="Aa" />
+    </div>
+     <div class = "span2">
+     <label for="question-1-answers-A">Skôr súhlasím</label>
+         </div>
+
+    <div class = "span1">
+        <input class = "buttonradio" type="radio" name="question-39-answers" id="question-39-answers-B" value="B" />
+      
+    </div>
+       <div class = "span2">
+        
+        <label for="question-1-answers-B">Skôr nesúhlasím</label>
+    </div>
+    </div>
+     <div class = "mainbox row white">
+    <h3>Aj keď to už vyšlo z módy, malo by sa v školách začať opäť trestať. </h3>
+   
+    <div class = "span1">
+        <input class = "buttonradio" type="radio" name="question-40-answers" id="question-40-answers-A" value="Axa" />
+    </div>
+     <div class = "span2">
+     <label for="question-1-answers-A">Skôr súhlasím</label>
+         </div>
+
+    <div class = "span1">
+        <input class = "buttonradio" type="radio" name="question-40-answers" id="question-40-answers-B" value="B" />
+      
+    </div>
+       <div class = "span2">
+        
+        <label for="question-1-answers-B">Skôr nesúhlasím</label>
+    </div>
+    </div>
+
+ <div class = "mainbox row">
+    <h3>Vlastenectvo bude vždy dôležitejšie než tzv. „svetoobčianstvo“.</h3>
+   
+    <div class = "span1">
+        <input class = "buttonradio" type="radio" name="question-41-answers" id="question-41-answers-A" value="Aa" />
+    </div>
+     <div class = "span2">
+     <label for="question-1-answers-A">Skôr súhlasím</label>
+         </div>
+
+    <div class = "span1">
+        <input class = "buttonradio" type="radio" name="question-41-answers" id="question-41-answers-B" value="B" />
+      
+    </div>
+       <div class = "span2">
+        
+        <label for="question-1-answers-B">Skôr nesúhlasím</label>
+    </div>
+    </div>
+     <div class = "mainbox row white">
+    <h3>Ľudia by sa mali viac identifikovať s pojmami morálka, právo, bezprávie. </h3>
+   
+    <div class = "span1">
+        <input class = "buttonradio" type="radio" name="question-42-answers" id="question-42-answers-A" value="Axa" />
+    </div>
+     <div class = "span2">
+     <label for="question-1-answers-A">Skôr súhlasím</label>
+         </div>
+
+    <div class = "span1">
+        <input class = "buttonradio" type="radio" name="question-42-answers" id="question-42-answers-B" value="B" />
+      
+    </div>
+       <div class = "span2">
+        
+        <label for="question-1-answers-B">Skôr nesúhlasím</label>
+    </div>
+    </div>
+
+ <div class = "mainbox row">
+    <h3>Zrušenie trestu smrti je úpadok právnosti. </h3>
+   
+    <div class = "span1">
+        <input class = "buttonradio" type="radio" name="question-43-answers" id="question-43-answers-A" value="Axa" />
+    </div>
+     <div class = "span2">
+     <label for="question-43-answers-A">Skôr súhlasím</label>
+         </div>
+
+    <div class = "span1">
+        <input class = "buttonradio" type="radio" name="question-43-answers" id="question-43-answers-B" value="B" />
+      
+    </div>
+       <div class = "span2">
+        
+        <label for="question-1-answers-B">Skôr nesúhlasím</label>
+    </div>
+    </div>
+     <div class = "mainbox row white">
+    <h3>Keď vidím, že má niekto problémy s prácou, tak sa jej rád ujmem. </h3>
+   
+    <div class = "span1">
+        <input class = "buttonradio" type="radio" name="question-44-answers" id="question-44-answers-A" value="Aa" />
+    </div>
+     <div class = "span2">
+     <label for="question-1-answers-A">Skôr súhlasím</label>
+         </div>
+
+    <div class = "span1">
+        <input class = "buttonradio" type="radio" name="question-44-answers" id="question-44-answers-B" value="B" />
+      
+    </div>
+       <div class = "span2">
+        
+        <label for="question-1-answers-B">Skôr nesúhlasím</label>
+    </div>
+    </div>
+
+ <div class = "mainbox row">
+    <h3>Potrebujeme cenzúru kultúry. </h3>
+   
+    <div class = "span1">
+        <input class = "buttonradio" type="radio" name="question-45-answers" id="question-45-answers-A" value="Axa" />
+    </div>
+     <div class = "span2">
+     <label for="question-1-answers-A">Skôr súhlasím</label>
+         </div>
+
+    <div class = "span1">
+        <input class = "buttonradio" type="radio" name="question-45-answers" id="question-45-answers-B" value="B" />
+      
+    </div>
+       <div class = "span2">
+        
+        <label for="question-1-answers-B">Skôr nesúhlasím</label>
+    </div>
+    </div>
+     <div class = "mainbox row white">
+    <h3>Myslím si, že by sa v rodine mali udržiavať určité profesné tradície. </h3>
+   
+    <div class = "span1">
+        <input class = "buttonradio" type="radio" name="question-46-answers" id="question-46-answers-A" value="Axa" />
+    </div>
+     <div class = "span2">
+     <label for="question-1-answers-A">Skôr súhlasím</label>
+         </div>
+
+    <div class = "span1">
+        <input class = "buttonradio" type="radio" name="question-46-answers" id="question-46-answers-B" value="B" />
+      
+    </div>
+       <div class = "span2">
+        
+        <label for="question-1-answers-B">Skôr nesúhlasím</label>
+    </div>
+    </div>
+
+ <div class = "mainbox row">
+    <h3>Silná riadiaca osobnosť sa nepotrebuje radiť s ostatnými.</h3>
+   
+    <div class = "span1">
+        <input class = "buttonradio" type="radio" name="question-47-answers" id="question-47-answers-A" value="Axa" />
+    </div>
+     <div class = "span2">
+     <label for="question-47-answers-A">Skôr súhlasím</label>
+         </div>
+
+    <div class = "span1">
+        <input class = "buttonradio" type="radio" name="question-47-answers" id="question-47-answers-B" value="B" />
+      
+    </div>
+       <div class = "span2">
+        
+        <label for="question-1-answers-B">Skôr nesúhlasím</label>
+    </div>
+    </div>
+     <div class = "mainbox row white">
+    <h3>Väčšinou vychádzam s ľuďmi dobre. </h3>
+   
+    <div class = "span1">
+        <input class = "buttonradio" type="radio" name="question-48-answers" id="question-48-answers-A" value="Axa" />
+    </div>
+     <div class = "span2">
+     <label for="question-1-answers-A">Skôr súhlasím</label>
+         </div>
+
+    <div class = "span1">
+        <input class = "buttonradio" type="radio" name="question-48-answers" id="question-48-answers-B" value="B" />
+      
+    </div>
+       <div class = "span2">
+        
+        <label for="question-1-answers-B">Skôr nesúhlasím</label>
+    </div>
+    </div>
+
+ <div class = "mainbox row">
+    <h3>Myslím si, že by deti mali rešpektovať svojich rodičov. </h3>
+   
+    <div class = "span1">
+        <input class = "buttonradio" type="radio" name="question-49-answers" id="question-49-answers-A" value="Axa" />
+    </div>
+     <div class = "span2">
+     <label for="question-1-answers-A">Skôr súhlasím</label>
+         </div>
+
+    <div class = "span1">
+        <input class = "buttonradio" type="radio" name="question-49-answers" id="question-49-answers-B" value="B" />
+      
+    </div>
+       <div class = "span2">
+        
+        <label for="question-1-answers-B">Skôr nesúhlasím</label>
+    </div>
+    </div>
+     <div class = "mainbox row white">
+    <h3>Mám súcit s ľuďmi v núdzi.</h3>
+   
+    <div class = "span1">
+        <input class = "buttonradio" type="radio" name="question-50-answers" id="question-50-answers-A" value="Aa" />
+    </div>
+     <div class = "span2">
+     <label for="question-1-answers-A">Skôr súhlasím</label>
+         </div>
+
+    <div class = "span1">
+        <input class = "buttonradio" type="radio" name="question-50-answers" id="question-50-answers-B" value="B" />
+      
+    </div>
+       <div class = "span2">
+        
+        <label for="question-1-answers-B">Skôr nesúhlasím</label>
+    </div>
+    </div>
+
+ <div class = "mainbox row">
+    <h3>V porovnaní s ostatnými robím viac práce nadčas. </h3>
+   
+    <div class = "span1">
+        <input class = "buttonradio" type="radio" name="question-51-answers" id="question-51-answers-A" value="Aa" />
+    </div>
+     <div class = "span2">
+     <label for="question-1-answers-A">Skôr súhlasím</label>
+         </div>
+
+    <div class = "span1">
+        <input class = "buttonradio" type="radio" name="question-51-answers" id="question-51-answers-B" value="B" />
+      
+    </div>
+       <div class = "span2">
+        
+        <label for="question-1-answers-B">Skôr nesúhlasím</label>
+    </div>
+    </div>
+     <div class = "mainbox row white">
+    <h3>Často sa prikloním k názorom väčšiny. </h3>
+   
+    <div class = "span1">
+        <input class = "buttonradio" type="radio" name="question-52-answers" id="question-52-answers-A" value="Aa" />
+    </div>
+     <div class = "span2">
+     <label for="question-1-answers-A">Skôr súhlasím</label>
+         </div>
+
+    <div class = "span1">
+        <input class = "buttonradio" type="radio" name="question-52-answers" id="question-52-answers-B" value="B" />
+      
+    </div>
+       <div class = "span2">
+        
+        <label for="question-1-answers-B">Skôr nesúhlasím</label>
+    </div>
+    </div>
+
+ <div class = "mainbox row">
+    <h3>Mám sklony veci príliš nepreháňať. </h3>
+   
+    <div class = "span1">
+        <input class = "buttonradio" type="radio" name="question-53-answers" id="question-53-answers-A" value="Aa" />
+    </div>
+     <div class = "span2">
+     <label for="question-53-answers-A">Skôr súhlasím</label>
+         </div>
+
+    <div class = "span1">
+        <input class = "buttonradio" type="radio" name="question-53-answers" id="question-53-answers-B" value="B" />
+      
+    </div>
+       <div class = "span2">
+        
+        <label for="question-1-answers-B">Skôr nesúhlasím</label>
+    </div>
+    </div>
+     <div class = "mainbox row white">
+    <h3>Nevďak vládne svetom.  </h3>
+   
+    <div class = "span1">
+        <input class = "buttonradio" type="radio" name="question-54-answers" id="question-54-answers-A" value="Aa" />
+    </div>
+     <div class = "span2">
+     <label for="question-1-answers-A">Skôr súhlasím</label>
+         </div>
+
+    <div class = "span1">
+        <input class = "buttonradio" type="radio" name="question-54-answers" id="question-54-answers-B" value="B" />
+      
+    </div>
+       <div class = "span2">
+        
+        <label for="question-1-answers-B">Skôr nesúhlasím</label>
+    </div>
+    </div>
+
+ <div class = "mainbox row">
+    <h3>Než aby som strácal čas a všetko niekomu vysvetľoval, radšej si urobím veci sám.</h3>
+   
+    <div class = "span1">
+        <input class = "buttonradio" type="radio" name="question-55-answers" id="question-55-answers-A" value="Aa" />
+    </div>
+     <div class = "span2">
+     <label for="question-1-answers-A">Skôr súhlasím</label>
+         </div>
+
+    <div class = "span1">
+        <input class = "buttonradio" type="radio" name="question-55-answers" id="question-55-answers-B" value="B" />
+      
+    </div>
+       <div class = "span2">
+        
+        <label for="question-1-answers-B">Skôr nesúhlasím</label>
+    </div>
+    </div>
+     <div class = "mainbox row white">
+    <h3>Často som bol prekvapený, akí vedia byť ľudia zlí. </h3>
+   
+    <div class = "span1">
+        <input class = "buttonradio" type="radio" name="question-56-answers" id="question-56-answers-A" value="Axa" />
+    </div>
+     <div class = "span2">
+     <label for="question-1-answers-A">Skôr súhlasím</label>
+         </div>
+
+    <div class = "span1">
+        <input class = "buttonradio" type="radio" name="question-56-answers" id="question-56-answers-B" value="B" />
+      
+    </div>
+       <div class = "span2">
+        
+        <label for="question-1-answers-B">Skôr nesúhlasím</label>
+    </div>
+    </div>
+
+ <div class = "mainbox row">
+    <h3>Novinári by mali mať menej slobody pri vyjadrovaní svojich názorov.</h3>
+   
+    <div class = "span1">
+        <input class = "buttonradio" type="radio" name="question-57-answers" id="question-57-answers-A" value="Axa" />
+    </div>
+     <div class = "span2">
+     <label for="question-57-answers-A">Skôr súhlasím</label>
+         </div>
+
+    <div class = "span1">
+        <input class = "buttonradio" type="radio" name="question-57-answers" id="question-57-answers-B" value="B" />
+      
+    </div>
+       <div class = "span2">
+        
+        <label for="question-1-answers-B">Skôr nesúhlasím</label>
+    </div>
+    </div>
+     <div class = "mainbox row white">
+    <h3>Veľa ľudí robí chybu, keď odmietajú zodpovednosť. </h3>
+   
+    <div class = "span1">
+        <input class = "buttonradio" type="radio" name="question-58-answers" id="question-58-answers-A" value="Axa" />
+    </div>
+     <div class = "span2">
+     <label for="question-1-answers-A">Skôr súhlasím</label>
+         </div>
+
+    <div class = "span1">
+        <input class = "buttonradio" type="radio" name="question-58-answers" id="question-58-answers-B" value="B" />
+      
+    </div>
+       <div class = "span2">
+        
+        <label for="question-1-answers-B">Skôr nesúhlasím</label>
+    </div>
+    </div>
+
+ <div class = "mainbox row">
+    <h3>Ak veľa neočakávaš od ľudí, nie si sklamaný. </h3>
+   
+    <div class = "span1">
+        <input class = "buttonradio" type="radio" name="question-59-answers" id="question-59-answers-A" value="Aa" />
+    </div>
+     <div class = "span2">
+     <label for="question-1-answers-A">Skôr súhlasím</label>
+         </div>
+
+    <div class = "span1">
+        <input class = "buttonradio" type="radio" name="question-59-answers" id="question-59-answers-B" value="B" />
+      
+    </div>
+       <div class = "span2">
+        
+        <label for="question-1-answers-B">Skôr nesúhlasím</label>
+    </div>
+    </div>
+     <div class = "mainbox row white">
+    <h3>Keď sa na mňa niekto hnevá, snažím sa ho obmäkčiť. </h3>
+   
+    <div class = "span1">
+        <input class = "buttonradio" type="radio" name="question-60-answers" id="question-60-answers-A" value="Aa" />
+    </div>
+     <div class = "span2">
+     <label for="question-1-answers-A">Skôr súhlasím</label>
+         </div>
+
+    <div class = "span1">
+        <input class = "buttonradio" type="radio" name="question-60-answers" id="question-60-answers-B" value="B" />
+      
+    </div>
+       <div class = "span2">
+        
+        <label for="question-1-answers-B">Skôr nesúhlasím</label>
+    </div>
+    </div><br>
+<a href = "#second" style = "font-size: 20px;
+padding: 10px 20px;
+background: #BAD595;
+color: black;
+border-radius: 10px;
+border: 0 none;"id = "secondbutton" onclick="secondhideable()">Zobraziť druhú časť testu</a>
+</div>
+
+<div id = "second" class = "second" style = "display:none;">
+<h2> Škála II. </h2>
+<div class = "mainbox row">
+    <h3>Zdá sa mi, že som lepší pozorovateľ než iní. </h3>
+   
+    <div class = "span1">
+        <input class = "buttonradio" type="radio" name="question-61-answers" id="question-61-answers-A" value="Ab" />
+    </div>
+     <div class = "span2">
+     <label for="question-61-answers-A">Skôr súhlasím</label>
+         </div>
+
+    <div class = "span1">
+        <input class = "buttonradio" type="radio" name="question-61-answers" id="question-61-answers-B" value="B" />
+      
+    </div>
+       <div class = "span2">
+        
+        <label for="question-1-answers-B">Skôr nesúhlasím</label>
+    </div>
+    </div>
+     <div class = "mainbox row white">
+    <h3>Keď ostatní strácajú rozvahu, zachovám si chladnú hlavu.  </h3>
+   
+    <div class = "span1">
+        <input class = "buttonradio" type="radio" name="question-62-answers" id="question-62-answers-A" value="Ab" />
+    </div>
+     <div class = "span2">
+     <label for="question-1-answers-A">Skôr súhlasím</label>
+         </div>
+
+    <div class = "span1">
+        <input class = "buttonradio" type="radio" name="question-62-answers" id="question-62-answers-B" value="B" />
+      
+    </div>
+       <div class = "span2">
+        
+        <label for="question-1-answers-B">Skôr nesúhlasím</label>
+    </div>
+    </div>
+
+ <div class = "mainbox row">
+    <h3>Rodičia mali vždy radosť, keď som sa pokúsil o niečo sám. </h3>
+   
+    <div class = "span1">
+        <input class = "buttonradio" type="radio" name="question-63-answers" id="question-63-answers-A" value="Ab" />
+    </div>
+     <div class = "span2">
+     <label for="question-1-answers-A">Skôr súhlasím</label>
+         </div>
+
+    <div class = "span1">
+        <input class = "buttonradio" type="radio" name="question-63-answers" id="question-63-answers-B" value="B" />
+      
+    </div>
+       <div class = "span2">
+        
+        <label for="question-1-answers-B">Skôr nesúhlasím</label>
+    </div>
+    </div>
+     <div class = "mainbox row white">
+    <h3>Prv než začnem konať, zbieram informácie a plánujem. </h3>
+   
+    <div class = "span1">
+        <input class = "buttonradio" type="radio" name="question-64-answers" id="question-64-answers-A" value="Ab" />
+    </div>
+     <div class = "span2">
+     <label for="question-1-answers-A">Skôr súhlasím</label>
+         </div>
+
+    <div class = "span1">
+        <input class = "buttonradio" type="radio" name="question-64-answers" id="question-64-answers-B" value="B" />
+      
+    </div>
+       <div class = "span2">
+        
+        <label for="question-1-answers-B">Skôr nesúhlasím</label>
+    </div>
+    </div>
+
+ <div class = "mainbox row">
+    <h3>Málokedy sa začervenám. </h3>
+   
+    <div class = "span1">
+        <input class = "buttonradio" type="radio" name="question-65-answers" id="question-65-answers-A" value="Ab" />
+    </div>
+     <div class = "span2">
+     <label for="question-1-answers-A">Skôr súhlasím</label>
+         </div>
+
+    <div class = "span1">
+        <input class = "buttonradio" type="radio" name="question-65-answers" id="question-65-answers-B" value="B" />
+      
+    </div>
+       <div class = "span2">
+        
+        <label for="question-1-answers-B">Skôr nesúhlasím</label>
+    </div>
+    </div>
+     <div class = "mainbox row white">
+    <h3>Na verejných akciách nemám problém diskutovať. </h3>
+   
+    <div class = "span1">
+        <input class = "buttonradio" type="radio" name="question-66-answers" id="question-66-answers-A" value="Ab" />
+    </div>
+     <div class = "span2">
+     <label for="question-1-answers-A">Skôr súhlasím</label>
+         </div>
+
+    <div class = "span1">
+        <input class = "buttonradio" type="radio" name="question-66-answers" id="question-66-answers-B" value="B" />
+      
+    </div>
+       <div class = "span2">
+        
+        <label for="question-1-answers-B">Skôr nesúhlasím</label>
+    </div>
+    </div>
+
+ <div class = "mainbox row">
+    <h3>Skoro nikdy neplačem. </h3>
+   
+    <div class = "span1">
+        <input class = "buttonradio" type="radio" name="question-67-answers" id="question-67-answers-A" value="Ab" />
+    </div>
+     <div class = "span2">
+     <label for="question-1-answers-A">Skôr súhlasím</label>
+         </div>
+
+    <div class = "span1">
+        <input class = "buttonradio" type="radio" name="question-67-answers" id="question-67-answers-B" value="B" />
+      
+    </div>
+       <div class = "span2">
+        
+        <label for="question-1-answers-B">Skôr nesúhlasím</label>
+    </div>
+    </div>
+     <div class = "mainbox row white">
+    <h3>Som ochotnejší ako ostatní vziať na seba riziko. </h3>
+   
+    <div class = "span1">
+        <input class = "buttonradio" type="radio" name="question-68-answers" id="question-68-answers-A" value="Ab" />
+    </div>
+     <div class = "span2">
+     <label for="question-1-answers-A">Skôr súhlasím</label>
+         </div>
+
+    <div class = "span1">
+        <input class = "buttonradio" type="radio" name="question-68-answers" id="question-68-answers-B" value="B" />
+      
+    </div>
+       <div class = "span2">
+        
+        <label for="question-1-answers-B">Skôr nesúhlasím</label>
+    </div>
+    </div>
+
+ <div class = "mainbox row">
+    <h3>Neprekáža mi byť sám. </h3>
+   
+    <div class = "span1">
+        <input class = "buttonradio" type="radio" name="question-69-answers" id="question-69-answers-A" value="Ab" />
+    </div>
+     <div class = "span2">
+     <label for="question-69-answers-A">Skôr súhlasím</label>
+         </div>
+
+    <div class = "span1">
+        <input class = "buttonradio" type="radio" name="question-69-answers" id="question-69-answers-B" value="B" />
+      
+    </div>
+       <div class = "span2">
+        
+        <label for="question-1-answers-B">Skôr nesúhlasím</label>
+    </div>
+    </div>
+     <div class = "mainbox row white">
+    <h3>Moji rodičia kládli väčší dôraz na vzájomné porozumenie než iní. </h3>
+   
+    <div class = "span1">
+        <input class = "buttonradio" type="radio" name="question-70-answers" id="question-70-answers-A" value="Ab" />
+    </div>
+     <div class = "span2">
+     <label for="question-1-answers-A">Skôr súhlasím</label>
+         </div>
+
+    <div class = "span1">
+        <input class = "buttonradio" type="radio" name="question-70-answers" id="question-70-answers-B" value="B" />
+      
+    </div>
+       <div class = "span2">
+        
+        <label for="question-1-answers-B">Skôr nesúhlasím</label>
+    </div>
+    </div>
+
+<div class = "mainbox row">
+    <h3>Keď sú ostatní rozčúlení, zachovám si bdelú nestrannosť. </h3>
+   
+    <div class = "span1">
+        <input class = "buttonradio" type="radio" name="question-71-answers" id="question-71-answers-A" value="Ab" />
+    </div>
+     <div class = "span2">
+     <label for="question-71-answers-A">Skôr súhlasím</label>
+         </div>
+
+    <div class = "span1">
+        <input class = "buttonradio" type="radio" name="question-71-answers" id="question-71-answers-B" value="B" />
+      
+    </div>
+       <div class = "span2">
+        
+        <label for="question-1-answers-B">Skôr nesúhlasím</label>
+    </div>
+    </div>
+     <div class = "mainbox row white">
+    <h3>Viac ako ostatní dávam prednosť bezproblémovému konaniu a prijímaniu 
+kompromisov. 
+</h3>
+   
+    <div class = "span1">
+        <input class = "buttonradio" type="radio" name="question-72-answers" id="question-72-answers-A" value="Ab" />
+    </div>
+     <div class = "span2">
+     <label for="question-1-answers-A">Skôr súhlasím</label>
+         </div>
+
+    <div class = "span1">
+        <input class = "buttonradio" type="radio" name="question-72-answers" id="question-72-answers-B" value="B" />
+      
+    </div>
+       <div class = "span2">
+        
+        <label for="question-1-answers-B">Skôr nesúhlasím</label>
+    </div>
+    </div>
+
+ <div class = "mainbox row">
+    <h3>Darí sa mi držať pocity pod kontrolou. </h3>
+   
+    <div class = "span1">
+        <input class = "buttonradio" type="radio" name="question-73-answers" id="question-73-answers-A" value="Ab" />
+    </div>
+     <div class = "span2">
+     <label for="question-1-answers-A">Skôr súhlasím</label>
+         </div>
+
+    <div class = "span1">
+        <input class = "buttonradio" type="radio" name="question-73-answers" id="question-73-answers-B" value="B" />
+      
+    </div>
+       <div class = "span2">
+        
+        <label for="question-1-answers-B">Skôr nesúhlasím</label>
+    </div>
+    </div>
+     <div class = "mainbox row white">
+    <h3>Keď plánujem akciu, beriem do úvahy aj ľudí, ktorí sa jej zúčastnia. </h3>
+   
+    <div class = "span1">
+        <input class = "buttonradio" type="radio" name="question-74-answers" id="question-74-answers-A" value="Ab" />
+    </div>
+     <div class = "span2">
+     <label for="question-1-answers-A">Skôr súhlasím</label>
+         </div>
+
+    <div class = "span1">
+        <input class = "buttonradio" type="radio" name="question-74-answers" id="question-74-answers-B" value="B" />
+      
+    </div>
+       <div class = "span2">
+        
+        <label for="question-1-answers-B">Skôr nesúhlasím</label>
+    </div>
+    </div>
+
+ <div class = "mainbox row">
+    <h3>I keď som o niečom skalopevne presvedčený, dokážem reagovať pozitívne i na 
+protiargumenty. 
+</h3>
+   
+    <div class = "span1">
+        <input class = "buttonradio" type="radio" name="question-75-answers" id="question-75-answers-A" value="Ab" />
+    </div>
+     <div class = "span2">
+     <label for="question-1-answers-A">Skôr súhlasím</label>
+         </div>
+
+    <div class = "span1">
+        <input class = "buttonradio" type="radio" name="question-75-answers" id="question-75-answers-B" value="B" />
+      
+    </div>
+       <div class = "span2">
+        
+        <label for="question-1-answers-B">Skôr nesúhlasím</label>
+    </div>
+    </div>
+     <div class = "mainbox row white">
+    <h3>I keď sa ostatní niekedy snažia potlačiť konflikty a pristupujú na kompromisy, 
+snažím sa vždy nájsť príčinu konfliktu. 
+</h3>
+   
+    <div class = "span1">
+        <input class = "buttonradio" type="radio" name="question-76-answers" id="question-76-answers-A" value="Ab" />
+    </div>
+     <div class = "span2">
+     <label for="question-1-answers-A">Skôr súhlasím</label>
+         </div>
+
+    <div class = "span1">
+        <input class = "buttonradio" type="radio" name="question-76-answers" id="question-76-answers-B" value="B" />
+      
+    </div>
+       <div class = "span2">
+        
+        <label for="question-1-answers-B">Skôr nesúhlasím</label>
+    </div>
+    </div>
+
+ <div class = "mainbox row">
+    <h3>V stresových situáciách zostávam pokojný. </h3>
+   
+    <div class = "span1">
+        <input class = "buttonradio" type="radio" name="question-77-answers" id="question-77-answers-A" value="Ab" />
+    </div>
+     <div class = "span2">
+     <label for="question-1-answers-A">Skôr súhlasím</label>
+         </div>
+
+    <div class = "span1">
+        <input class = "buttonradio" type="radio" name="question-77-answers" id="question-77-answers-B" value="B" />
+      
+    </div>
+       <div class = "span2">
+        
+        <label for="question-1-answers-B">Skôr nesúhlasím</label>
+    </div>
+    </div>
+     <div class = "mainbox row white">
+    <h3>Pred rozhodnutím zvažujem riziká. </h3>
+   
+    <div class = "span1">
+        <input class = "buttonradio" type="radio" name="question-78-answers" id="question-78-answers-A" value="Ab" />
+    </div>
+     <div class = "span2">
+     <label for="question-1-answers-A">Skôr súhlasím</label>
+         </div>
+
+    <div class = "span1">
+        <input class = "buttonradio" type="radio" name="question-78-answers" id="question-78-answers-B" value="B" />
+      
+    </div>
+       <div class = "span2">
+        
+        <label for="question-1-answers-B">Skôr nesúhlasím</label>
+    </div>
+    </div>
+
+ <div class = "mainbox row">
+    <h3>Na rozdiel od ostatných vyhľadávam také názory a myšlienky, ktoré sú odlišné  od 
+mojich. 
+</h3>
+   
+    <div class = "span1">
+        <input class = "buttonradio" type="radio" name="question-79-answers" id="question-79-answers-A" value="Ab" />
+    </div>
+     <div class = "span2">
+     <label for="question-79-answers-A">Skôr súhlasím</label>
+         </div>
+
+    <div class = "span1">
+        <input class = "buttonradio" type="radio" name="question-79-answers" id="question-79-answers-B" value="B" />
+      
+    </div>
+       <div class = "span2">
+        
+        <label for="question-1-answers-B">Skôr nesúhlasím</label>
+    </div>
+    </div>
+     <div class = "mainbox row white">
+    <h3>Spolupracovníci o mne hovoria, že som rozhodný a otvorený. </h3>
+   
+    <div class = "span1">
+        <input class = "buttonradio" type="radio" name="question-80-answers" id="question-80-answers-A" value="Ab" />
+    </div>
+     <div class = "span2">
+     <label for="question-1-answers-A">Skôr súhlasím</label>
+         </div>
+
+    <div class = "span1">
+        <input class = "buttonradio" type="radio" name="question-80-answers" id="question-80-answers-B" value="B" />
+      
+    </div>
+       <div class = "span2">
+        
+        <label for="question-1-answers-B">Skôr nesúhlasím</label>
+    </div>
+    </div>
+
+<div class = "mainbox row">
+    <h3>Často som musel ľudí prinútiť, keď som chcel, aby robili dôležitú prácu. </h3>
+   
+    <div class = "span1">
+        <input class = "buttonradio" type="radio" name="question-81-answers" id="question-81-answers-A" value="Ab" />
+    </div>
+     <div class = "span2">
+     <label for="question-81-answers-A">Skôr súhlasím</label>
+         </div>
+
+    <div class = "span1">
+        <input class = "buttonradio" type="radio" name="question-81-answers" id="question-81-answers-B" value="B" />
+      
+    </div>
+       <div class = "span2">
+        
+        <label for="question-1-answers-B">Skôr nesúhlasím</label>
+    </div>
+    </div>
+     <div class = "mainbox row white">
+    <h3>Medziľudské konflikty riešim osobným rozhovorom. </h3>
+   
+    <div class = "span1">
+        <input class = "buttonradio" type="radio" name="question-82-answers" id="question-82-answers-A" value="Ab" />
+    </div>
+     <div class = "span2">
+     <label for="question-1-answers-A">Skôr súhlasím</label>
+         </div>
+
+    <div class = "span1">
+        <input class = "buttonradio" type="radio" name="question-82-answers" id="question-82-answers-B" value="B" />
+      
+    </div>
+       <div class = "span2">
+        
+        <label for="question-1-answers-B">Skôr nesúhlasím</label>
+    </div>
+    </div>
+
+ <div class = "mainbox row">
+    <h3>Som presvedčený, že pracovníci sú pod dobrým vedením ochotní predviesť to 
+najlepšie. 
+</h3>
+   
+    <div class = "span1">
+        <input class = "buttonradio" type="radio" name="question-83-answers" id="question-83-answers-A" value="Ab" />
+    </div>
+     <div class = "span2">
+     <label for="question-1-answers-A">Skôr súhlasím</label>
+         </div>
+
+    <div class = "span1">
+        <input class = "buttonradio" type="radio" name="question-83-answers" id="question-83-answers-B" value="B" />
+      
+    </div>
+       <div class = "span2">
+        
+        <label for="question-1-answers-B">Skôr nesúhlasím</label>
+    </div>
+    </div>
+     <div class = "mainbox row white">
+    <h3>Uznávam, že to, čo si iní myslia a cítia, je dôležité. </h3>
+   
+    <div class = "span1">
+        <input class = "buttonradio" type="radio" name="question-84-answers" id="question-84-answers-A" value="Ab" />
+    </div>
+     <div class = "span2">
+     <label for="question-1-answers-A">Skôr súhlasím</label>
+         </div>
+
+    <div class = "span1">
+        <input class = "buttonradio" type="radio" name="question-84-answers" id="question-84-answers-B" value="B" />
+      
+    </div>
+       <div class = "span2">
+        
+        <label for="question-1-answers-B">Skôr nesúhlasím</label>
+    </div>
+    </div>
+
+ <div class = "mainbox row">
+    <h3>Už ako dieťa ma nabádali, aby som vyjadril svoje názory bez strachu z trestu a zo 
+zosmiešnenia. 
+</h3>
+   
+    <div class = "span1">
+        <input class = "buttonradio" type="radio" name="question-85-answers" id="question-85-answers-A" value="Ab" />
+    </div>
+     <div class = "span2">
+     <label for="question-1-answers-A">Skôr súhlasím</label>
+         </div>
+
+    <div class = "span1">
+        <input class = "buttonradio" type="radio" name="question-85-answers" id="question-85-answers-B" value="B" />
+      
+    </div>
+       <div class = "span2">
+        
+        <label for="question-1-answers-B">Skôr nesúhlasím</label>
+    </div>
+    </div>
+     <div class = "mainbox row white">
+    <h3>Zaujímam sa o výsledky vedy a výskumu. </h3>
+   
+    <div class = "span1">
+        <input class = "buttonradio" type="radio" name="question-86-answers" id="question-86-answers-A" value="Ab" />
+    </div>
+     <div class = "span2">
+     <label for="question-1-answers-A">Skôr súhlasím</label>
+         </div>
+
+    <div class = "span1">
+        <input class = "buttonradio" type="radio" name="question-86-answers" id="question-86-answers-B" value="B" />
+      
+    </div>
+       <div class = "span2">
+        
+        <label for="question-1-answers-B">Skôr nesúhlasím</label>
+    </div>
+    </div>
+
+ <div class = "mainbox row">
+    <h3>Mám väčšiu schopnosť myslieť samostatne a nezávisle, ako sa prispôsobiť názorom 
+iných ľudí. 
+</h3>
+   
+    <div class = "span1">
+        <input class = "buttonradio" type="radio" name="question-87-answers" id="question-87-answers-A" value="Ab" />
+    </div>
+     <div class = "span2">
+     <label for="question-1-answers-A">Skôr súhlasím</label>
+         </div>
+
+    <div class = "span1">
+        <input class = "buttonradio" type="radio" name="question-87-answers" id="question-87-answers-B" value="B" />
+      
+    </div>
+       <div class = "span2">
+        
+        <label for="question-1-answers-B">Skôr nesúhlasím</label>
+    </div>
+    </div>
+     <div class = "mainbox row white">
+    <h3>Verím, že ľudia sú schopní sami seba viesť a kontrolovať, a tým sa rozvíjať.  </h3>
+   
+    <div class = "span1">
+        <input class = "buttonradio" type="radio" name="question-88-answers" id="question-88-answers-A" value="Ab" />
+    </div>
+     <div class = "span2">
+     <label for="question-1-answers-A">Skôr súhlasím</label>
+         </div>
+
+    <div class = "span1">
+        <input class = "buttonradio" type="radio" name="question-88-answers" id="question-88-answers-B" value="B" />
+      
+    </div>
+       <div class = "span2">
+        
+        <label for="question-1-answers-B">Skôr nesúhlasím</label>
+    </div>
+    </div>
+
+ <div class = "mainbox row">
+    <h3>Väčšina chýb vzniká skôr z nedorozumenia ako z nedbalosti. </h3>
+   
+    <div class = "span1">
+        <input class = "buttonradio" type="radio" name="question-89-answers" id="question-89-answers-A" value="Ab" />
+    </div>
+     <div class = "span2">
+     <label for="question-89-answers-A">Skôr súhlasím</label>
+         </div>
+
+    <div class = "span1">
+        <input class = "buttonradio" type="radio" name="question-89-answers" id="question-89-answers-B" value="B" />
+      
+    </div>
+       <div class = "span2">
+        
+        <label for="question-1-answers-B">Skôr nesúhlasím</label>
+    </div>
+    </div>
+     <div class = "mainbox row white">
+    <h3>Na svet sa dívam pozitívne a bez napätia. </h3>
+   
+    <div class = "span1">
+        <input class = "buttonradio" type="radio" name="question-90-answers" id="question-90-answers-A" value="Ab" />
+    </div>
+     <div class = "span2">
+     <label for="question-1-answers-A">Skôr súhlasím</label>
+         </div>
+
+    <div class = "span1">
+        <input class = "buttonradio" type="radio" name="question-90-answers" id="question-90-answers-B" value="B" />
+      
+    </div>
+       <div class = "span2">
+        
+        <label for="question-1-answers-B">Skôr nesúhlasím</label>
+    </div>
+    </div>
+
+<div class = "mainbox row">
+    <h3>Som aktívnym členom troch a viac spolkov alebo organizácií. </h3>
+   
+    <div class = "span1">
+        <input class = "buttonradio" type="radio" name="question-91-answers" id="question-91-answers-A" value="Ab" />
+    </div>
+     <div class = "span2">
+     <label for="question-91-answers-A">Skôr súhlasím</label>
+         </div>
+
+    <div class = "span1">
+        <input class = "buttonradio" type="radio" name="question-91-answers" id="question-91-answers-B" value="B" />
+      
+    </div>
+       <div class = "span2">
+        
+        <label for="question-1-answers-B">Skôr nesúhlasím</label>
+    </div>
+    </div>
+     <div class = "mainbox row white">
+    <h3>Čestnosť a otvorenosť sa vyplácajú.  </h3>
+   
+    <div class = "span1">
+        <input class = "buttonradio" type="radio" name="question-92-answers" id="question-92-answers-A" value="Ab" />
+    </div>
+     <div class = "span2">
+     <label for="question-1-answers-A">Skôr súhlasím</label>
+         </div>
+
+    <div class = "span1">
+        <input class = "buttonradio" type="radio" name="question-92-answers" id="question-92-answers-B" value="B" />
+      
+    </div>
+       <div class = "span2">
+        
+        <label for="question-1-answers-B">Skôr nesúhlasím</label>
+    </div>
+    </div>
+
+ <div class = "mainbox row">
+    <h3>Rozmýšľam racionálne a logicky. </h3>
+   
+    <div class = "span1">
+        <input class = "buttonradio" type="radio" name="question-93-answers" id="question-93-answers-A" value="Ab" />
+    </div>
+     <div class = "span2">
+     <label for="question-1-answers-A">Skôr súhlasím</label>
+         </div>
+
+    <div class = "span1">
+        <input class = "buttonradio" type="radio" name="question-93-answers" id="question-93-answers-B" value="B" />
+      
+    </div>
+       <div class = "span2">
+        
+        <label for="question-1-answers-B">Skôr nesúhlasím</label>
+    </div>
+    </div>
+     <div class = "mainbox row white">
+    <h3>Navonok ostávam pokojný, aj keď to vo mne vrie. </h3>
+   
+    <div class = "span1">
+        <input class = "buttonradio" type="radio" name="question-94-answers" id="question-94-answers-A" value="Ab" />
+    </div>
+     <div class = "span2">
+     <label for="question-1-answers-A">Skôr súhlasím</label>
+         </div>
+
+    <div class = "span1">
+        <input class = "buttonradio" type="radio" name="question-94-answers" id="question-94-answers-B" value="B" />
+      
+    </div>
+       <div class = "span2">
+        
+        <label for="question-1-answers-B">Skôr nesúhlasím</label>
+    </div>
+    </div>
+
+ <div class = "mainbox row">
+    <h3>Častejšie ako ostatní navštevujem kurzy, semináre a prednášky. </h3>
+   
+    <div class = "span1">
+        <input class = "buttonradio" type="radio" name="question-95-answers" id="question-95-answers-A" value="Ab" />
+    </div>
+     <div class = "span2">
+     <label for="question-1-answers-A">Skôr súhlasím</label>
+         </div>
+
+    <div class = "span1">
+        <input class = "buttonradio" type="radio" name="question-95-answers" id="question-95-answers-B" value="B" />
+      
+    </div>
+       <div class = "span2">
+        
+        <label for="question-1-answers-B">Skôr nesúhlasím</label>
+    </div>
+    </div>
+     <div class = "mainbox row white">
+    <h3>Hovorí sa o mne, že som férový a objektívny. </h3>
+   
+    <div class = "span1">
+        <input class = "buttonradio" type="radio" name="question-96-answers" id="question-96-answers-A" value="Ab" />
+    </div>
+     <div class = "span2">
+     <label for="question-1-answers-A">Skôr súhlasím</label>
+         </div>
+
+    <div class = "span1">
+        <input class = "buttonradio" type="radio" name="question-96-answers" id="question-96-answers-B" value="B" />
+      
+    </div>
+       <div class = "span2">
+        
+        <label for="question-1-answers-B">Skôr nesúhlasím</label>
+    </div>
+    </div>
+
+ <div class = "mainbox row">
+    <h3>Väčšinou dosiahnem, čo chcem. </h3>
+   
+    <div class = "span1">
+        <input class = "buttonradio" type="radio" name="question-97-answers" id="question-97-answers-A" value="Ab" />
+    </div>
+     <div class = "span2">
+     <label for="question-1-answers-A">Skôr súhlasím</label>
+         </div>
+
+    <div class = "span1">
+        <input class = "buttonradio" type="radio" name="question-97-answers" id="question-97-answers-B" value="B" />
+      
+    </div>
+       <div class = "span2">
+        
+        <label for="question-1-answers-B">Skôr nesúhlasím</label>
+    </div>
+    </div>
+     <div class = "mainbox row white">
+    <h3>Viem veci vysvetliť jasne a zrozumiteľne. </h3>
+   
+    <div class = "span1">
+        <input class = "buttonradio" type="radio" name="question-98-answers" id="question-98-answers-A" value="Ab" />
+    </div>
+     <div class = "span2">
+     <label for="question-1-answers-A">Skôr súhlasím</label>
+         </div>
+
+    <div class = "span1">
+        <input class = "buttonradio" type="radio" name="question-98-answers" id="question-98-answers-B" value="B" />
+      
+    </div>
+       <div class = "span2">
+        
+        <label for="question-1-answers-B">Skôr nesúhlasím</label>
+    </div>
+    </div>
+
+ <div class = "mainbox row">
+    <h3>Môj úspech spočíva v tom, že viem skrývať svoje pocity. </h3>
+   
+    <div class = "span1">
+        <input class = "buttonradio" type="radio" name="question-99-answers" id="question-99-answers-A" value="Ab" />
+    </div>
+     <div class = "span2">
+     <label for="question-99-answers-A">Skôr súhlasím</label>
+         </div>
+
+    <div class = "span1">
+        <input class = "buttonradio" type="radio" name="question-99-answers" id="question-99-answers-B" value="B" />
+      
+    </div>
+       <div class = "span2">
+        
+        <label for="question-1-answers-B">Skôr nesúhlasím</label>
+    </div>
+    </div>
+     <div class = "mainbox row white">
+    <h3>V diskusii patria moje argumenty k tým najlepším. </h3>
+   
+    <div class = "span1">
+        <input class = "buttonradio" type="radio" name="question-100-answers" id="question-100-answers-A" value="Ab" />
+    </div>
+     <div class = "span2">
+     <label for="question-1-answers-A">Skôr súhlasím</label>
+         </div>
+
+    <div class = "span1">
+        <input class = "buttonradio" type="radio" name="question-100-answers" id="question-100-answers-B" value="B" />
+      
+    </div>
+       <div class = "span2">
+        
+        <label for="question-1-answers-B">Skôr nesúhlasím</label>
+    </div>
+    </div>
+
+<div class = "mainbox row">
+    <h3>Som presvedčený, že ľudia sú v podstate dobrí. </h3>
+   
+    <div class = "span1">
+        <input class = "buttonradio" type="radio" name="question-101-answers" id="question-101-answers-A" value="Ab" />
+    </div>
+     <div class = "span2">
+     <label for="question-101-answers-A">Skôr súhlasím</label>
+         </div>
+
+    <div class = "span1">
+        <input class = "buttonradio" type="radio" name="question-101-answers" id="question-101-answers-B" value="B" />
+      
+    </div>
+       <div class = "span2">
+        
+        <label for="question-1-answers-B">Skôr nesúhlasím</label>
+    </div>
+    </div>
+     <div class = "mainbox row white">
+    <h3>Je pre mňa dôležité byť čo najlepším. </h3>
+   
+    <div class = "span1">
+        <input class = "buttonradio" type="radio" name="question-102-answers" id="question-102-answers-A" value="Ab" />
+    </div>
+     <div class = "span2">
+     <label for="question-1-answers-A">Skôr súhlasím</label>
+         </div>
+
+    <div class = "span1">
+        <input class = "buttonradio" type="radio" name="question-102-answers" id="question-102-answers-B" value="B" />
+      
+    </div>
+       <div class = "span2">
+        
+        <label for="question-1-answers-B">Skôr nesúhlasím</label>
+    </div>
+    </div>
+
+ <div class = "mainbox row">
+    <h3>Denne čítam jedny až dvoje noviny (alebo denne počúvam, pozerám správy). </h3>
+   
+    <div class = "span1">
+        <input class = "buttonradio" type="radio" name="question-103-answers" id="question-103-answers-A" value="Ab" />
+    </div>
+     <div class = "span2">
+     <label for="question-1-answers-A">Skôr súhlasím</label>
+         </div>
+
+    <div class = "span1">
+        <input class = "buttonradio" type="radio" name="question-103-answers" id="question-103-answers-B" value="B" />
+      
+    </div>
+       <div class = "span2">
+        
+        <label for="question-1-answers-B">Skôr nesúhlasím</label>
+    </div>
+    </div>
+     <div class = "mainbox row white">
+    <h3>Mám dosť jasnú predstavu, kam by som sa chcel dostať  o 10 rokov v pracovnom i osobnom živote. 
+</h3>
+   
+    <div class = "span1">
+        <input class = "buttonradio" type="radio" name="question-104-answers" id="question-104-answers-A" value="Ab" />
+    </div>
+     <div class = "span2">
+     <label for="question-1-answers-A">Skôr súhlasím</label>
+         </div>
+
+    <div class = "span1">
+        <input class = "buttonradio" type="radio" name="question-104-answers" id="question-104-answers-B" value="B" />
+      
+    </div>
+       <div class = "span2">
+        
+        <label for="question-1-answers-B">Skôr nesúhlasím</label>
+    </div>
+    </div>
+    <br>
+<a href = "#third" style = "font-size: 20px;
+padding: 10px 20px;
+background: #BAD595;
+color: black;
+border-radius: 10px;
+border: 0 none;" id = "thirdbutton" onclick="thirdhideable()">Zobraziť tretiu časť testu</a>
+</div>
+
+<div id = "third" class = "third" style = "display:none;">
+<h2>Škála III.</h2>
+ <div class = "mainbox row">
+    <h3>Verím, že 90 % dôležitých rozhodnutí je najviac ovplyvnených pocitmi.  </h3>
+   
+    <div class = "span1">
+        <input class = "buttonradio" type="radio" name="question-105-answers" id="question-105-answers-A" value="Axc" />
+    </div>
+     <div class = "span2">
+     <label for="question-1-answers-A">Skôr súhlasím</label>
+         </div>
+
+    <div class = "span1">
+        <input class = "buttonradio" type="radio" name="question-105-answers" id="question-105-answers-B" value="B" />
+      
+    </div>
+       <div class = "span2">
+        
+        <label for="question-1-answers-B">Skôr nesúhlasím</label>
+    </div>
+    </div>
+     <div class = "mainbox row white">
+    <h3> Často sa ľutujem. </h3>
+   
+    <div class = "span1">
+        <input class = "buttonradio" type="radio" name="question-106-answers" id="question-106-answers-A" value="Axc" />
+    </div>
+     <div class = "span2">
+     <label for="question-1-answers-A">Skôr súhlasím</label>
+         </div>
+
+    <div class = "span1">
+        <input class = "buttonradio" type="radio" name="question-106-answers" id="question-106-answers-B" value="B" />
+      
+    </div>
+       <div class = "span2">
+        
+        <label for="question-1-answers-B">Skôr nesúhlasím</label>
+    </div>
+    </div>
+
+ <div class = "mainbox row">
+    <h3>Ak je vyššie postavená osoba zodpovedná za ťažké rozhodnutie, som jej nápomocný, i keď o výsledku nie som presvedčený. </h3>
+   
+    <div class = "span1">
+        <input class = "buttonradio" type="radio" name="question-107-answers" id="question-107-answers-A" value="Ac" />
+    </div>
+     <div class = "span2">
+     <label for="question-1-answers-A">Skôr súhlasím</label>
+         </div>
+
+    <div class = "span1">
+        <input class = "buttonradio" type="radio" name="question-107-answers" id="question-107-answers-B" value="B" />
+      
+    </div>
+       <div class = "span2">
+        
+        <label for="question-1-answers-B">Skôr nesúhlasím</label>
+    </div>
+    </div>
+     <div class = "mainbox row white">
+    <h3>Rád šoférujem veľmi rýchlo. </h3>
+   
+    <div class = "span1">
+        <input class = "buttonradio" type="radio" name="question-108-answers" id="question-108-answers-A" value="Axc" />
+    </div>
+     <div class = "span2">
+     <label for="question-1-answers-A">Skôr súhlasím</label>
+         </div>
+
+    <div class = "span1">
+        <input class = "buttonradio" type="radio" name="question-108-answers" id="question-108-answers-B" value="B" />
+      
+    </div>
+       <div class = "span2">
+        
+        <label for="question-1-answers-B">Skôr nesúhlasím</label>
+    </div>
+    </div>
+
+ <div class = "mainbox row">
+    <h3>Často snívam za bieleho dňa.  </h3>
+   
+    <div class = "span1">
+        <input class = "buttonradio" type="radio" name="question-109-answers" id="question-109-answers-A" value="Axc" />
+    </div>
+     <div class = "span2">
+     <label for="question-109-answers-A">Skôr súhlasím</label>
+         </div>
+
+    <div class = "span1">
+        <input class = "buttonradio" type="radio" name="question-109-answers" id="question-109-answers-B" value="B" />
+      
+    </div>
+       <div class = "span2">
+        
+        <label for="question-1-answers-B">Skôr nesúhlasím</label>
+    </div>
+    </div>
+     <div class = "mainbox row white">
+    <h3>Nakupujem veľmi spontánne.  </h3>
+   
+    <div class = "span1">
+        <input class = "buttonradio" type="radio" name="question-110-answers" id="question-110-answers-A" value="Axc" />
+    </div>
+     <div class = "span2">
+     <label for="question-1-answers-A">Skôr súhlasím</label>
+         </div>
+
+    <div class = "span1">
+        <input class = "buttonradio" type="radio" name="question-110-answers" id="question-110-answers-B" value="B" />
+      
+    </div>
+       <div class = "span2">
+        
+        <label for="question-1-answers-B">Skôr nesúhlasím</label>
+    </div>
+    </div>
+
+<div class = "mainbox row">
+    <h3>Je pre mňa ťažké podstúpiť odtučňovanie alebo prestať fajčiť. </h3>
+   
+    <div class = "span1">
+        <input class = "buttonradio" type="radio" name="question-111-answers" id="question-111-answers-A" value="Axc" />
+    </div>
+     <div class = "span2">
+     <label for="question-111-answers-A">Skôr súhlasím</label>
+         </div>
+
+    <div class = "span1">
+        <input class = "buttonradio" type="radio" name="question-111-answers" id="question-111-answers-B" value="B" />
+      
+    </div>
+       <div class = "span2">
+        
+        <label for="question-1-answers-B">Skôr nesúhlasím</label>
+    </div>
+    </div>
+     <div class = "mainbox row white">
+    <h3>Rád niečo urobím, ale som rád, keď vedenie je v rukách iného.  </h3>
+   
+    <div class = "span1">
+        <input class = "buttonradio" type="radio" name="question-112-answers" id="question-112-answers-A" value="Ac" />
+    </div>
+     <div class = "span2">
+     <label for="question-1-answers-A">Skôr súhlasím</label>
+         </div>
+
+    <div class = "span1">
+        <input class = "buttonradio" type="radio" name="question-112-answers" id="question-112-answers-B" value="B" />
+      
+    </div>
+       <div class = "span2">
+        
+        <label for="question-1-answers-B">Skôr nesúhlasím</label>
+    </div>
+    </div>
+
+ <div class = "mainbox row">
+    <h3>Často používam výrazy „super“, „perfektný“, „ohromný“. </h3>
+   
+    <div class = "span1">
+        <input class = "buttonradio" type="radio" name="question-113-answers" id="question-113-answers-A" value="Axc" />
+    </div>
+     <div class = "span2">
+     <label for="question-1-answers-A">Skôr súhlasím</label>
+         </div>
+
+    <div class = "span1">
+        <input class = "buttonradio" type="radio" name="question-113-answers" id="question-113-answers-B" value="B" />
+      
+    </div>
+       <div class = "span2">
+        
+        <label for="question-1-answers-B">Skôr nesúhlasím</label>
+    </div>
+    </div>
+     <div class = "mainbox row white">
+    <h3>Vo vypätých situáciách cúvnem. </h3>
+   
+    <div class = "span1">
+        <input class = "buttonradio" type="radio" name="question-114-answers" id="question-114-answers-A" value="Ac" />
+    </div>
+     <div class = "span2">
+     <label for="question-1-answers-A">Skôr súhlasím</label>
+         </div>
+
+    <div class = "span1">
+        <input class = "buttonradio" type="radio" name="question-114-answers" id="question-114-answers-B" value="B" />
+      
+    </div>
+       <div class = "span2">
+        
+        <label for="question-1-answers-B">Skôr nesúhlasím</label>
+    </div>
+    </div>
+
+ <div class = "mainbox row">
+    <h3>Skromnosť je najväčšia cnosť. </h3>
+   
+    <div class = "span1">
+        <input class = "buttonradio" type="radio" name="question-115-answers" id="question-115-answers-A" value="Ac" />
+    </div>
+     <div class = "span2">
+     <label for="question-1-answers-A">Skôr súhlasím</label>
+         </div>
+
+    <div class = "span1">
+        <input class = "buttonradio" type="radio" name="question-115-answers" id="question-115-answers-B" value="B" />
+      
+    </div>
+       <div class = "span2">
+        
+        <label for="question-1-answers-B">Skôr nesúhlasím</label>
+    </div>
+    </div>
+     <div class = "mainbox row white">
+    <h3>Rád hovorím vtipy.  </h3>
+   
+    <div class = "span1">
+        <input class = "buttonradio" type="radio" name="question-116-answers" id="question-116-answers-A" value="Axc" />
+    </div>
+     <div class = "span2">
+     <label for="question-1-answers-A">Skôr súhlasím</label>
+         </div>
+
+    <div class = "span1">
+        <input class = "buttonradio" type="radio" name="question-116-answers" id="question-116-answers-B" value="B" />
+      
+    </div>
+       <div class = "span2">
+        
+        <label for="question-1-answers-B">Skôr nesúhlasím</label>
+    </div>
+    </div>
+
+ <div class = "mainbox row">
+    <h3>Mám kopec nových nápadov. </h3>
+   
+    <div class = "span1">
+        <input class = "buttonradio" type="radio" name="question-117-answers" id="question-117-answers-A" value="Axc" />
+    </div>
+     <div class = "span2">
+     <label for="question-1-answers-A">Skôr súhlasím</label>
+         </div>
+
+    <div class = "span1">
+        <input class = "buttonradio" type="radio" name="question-117-answers" id="question-117-answers-B" value="B" />
+      
+    </div>
+       <div class = "span2">
+        
+        <label for="question-1-answers-B">Skôr nesúhlasím</label>
+    </div>
+    </div>
+     <div class = "mainbox row white">
+    <h3>Nemám problém robiť niečo na príkaz. </h3>
+   
+    <div class = "span1">
+        <input class = "buttonradio" type="radio" name="question-118-answers" id="question-118-answers-A" value="Ac" />
+    </div>
+     <div class = "span2">
+     <label for="question-1-answers-A">Skôr súhlasím</label>
+         </div>
+
+    <div class = "span1">
+        <input class = "buttonradio" type="radio" name="question-118-answers" id="question-118-answers-B" value="B" />
+      
+    </div>
+       <div class = "span2">
+        
+        <label for="question-1-answers-B">Skôr nesúhlasím</label>
+    </div>
+    </div>
+
+ <div class = "mainbox row">
+    <h3>Moji rodičia a vychovávatelia boli dobrí, priateľskí ľudia. </h3>
+   
+    <div class = "span1">
+        <input class = "buttonradio" type="radio" name="question-119-answers" id="question-119-answers-A" value="Ac" />
+    </div>
+     <div class = "span2">
+     <label for="question-119-answers-A">Skôr súhlasím</label>
+         </div>
+
+    <div class = "span1">
+        <input class = "buttonradio" type="radio" name="question-119-answers" id="question-119-answers-B" value="B" />
+      
+    </div>
+       <div class = "span2">
+        
+        <label for="question-1-answers-B">Skôr nesúhlasím</label>
+    </div>
+    </div>
+     <div class = "mainbox row white">
+    <h3>Často som impulzívny. </h3>
+   
+    <div class = "span1">
+        <input class = "buttonradio" type="radio" name="question-120-answers" id="question-120-answers-A" value="Axc" />
+    </div>
+     <div class = "span2">
+     <label for="question-1-answers-A">Skôr súhlasím</label>
+         </div>
+
+    <div class = "span1">
+        <input class = "buttonradio" type="radio" name="question-120-answers" id="question-120-answers-B" value="B" />
+      
+    </div>
+       <div class = "span2">
+        
+        <label for="question-1-answers-B">Skôr nesúhlasím</label>
+    </div>
+    </div>
+
+<div class = "mainbox row">
+    <h3>Nerád donekonečna diskutujem, radšej súhlasím. </h3>
+   
+    <div class = "span1">
+        <input class = "buttonradio" type="radio" name="question-121-answers" id="question-121-answers-A" value="Ac" />
+    </div>
+     <div class = "span2">
+     <label for="question-121-answers-A">Skôr súhlasím</label>
+         </div>
+
+    <div class = "span1">
+        <input class = "buttonradio" type="radio" name="question-121-answers" id="question-121-answers-B" value="B" />
+      
+    </div>
+       <div class = "span2">
+        
+        <label for="question-1-answers-B">Skôr nesúhlasím</label>
+    </div>
+    </div>
+     <div class = "mainbox row white">
+    <h3>Snažím sa, aby ma ostatní uznávali. </h3>
+   
+    <div class = "span1">
+        <input class = "buttonradio" type="radio" name="question-122-answers" id="question-122-answers-A" value="Ac" />
+    </div>
+     <div class = "span2">
+     <label for="question-1-answers-A">Skôr súhlasím</label>
+         </div>
+
+    <div class = "span1">
+        <input class = "buttonradio" type="radio" name="question-122-answers" id="question-122-answers-B" value="B" />
+      
+    </div>
+       <div class = "span2">
+        
+        <label for="question-1-answers-B">Skôr nesúhlasím</label>
+    </div>
+    </div>
+
+ <div class = "mainbox row">
+    <h3>Často sa pristihnem, že sa smejem alebo hovorím príliš nahlas. </h3>
+   
+    <div class = "span1">
+        <input class = "buttonradio" type="radio" name="question-123-answers" id="question-123-answers-A" value="Ac" />
+    </div>
+     <div class = "span2">
+     <label for="question-1-answers-A">Skôr súhlasím</label>
+         </div>
+
+    <div class = "span1">
+        <input class = "buttonradio" type="radio" name="question-123-answers" id="question-123-answers-B" value="B" />
+      
+    </div>
+       <div class = "span2">
+        
+        <label for="question-1-answers-B">Skôr nesúhlasím</label>
+    </div>
+    </div>
+     <div class = "mainbox row white">
+    <h3>Často si hovorím: „Tu sa neoplatí nič robiť!“ </h3>
+   
+    <div class = "span1">
+        <input class = "buttonradio" type="radio" name="question-124-answers" id="question-124-answers-A" value="Ac" />
+    </div>
+     <div class = "span2">
+     <label for="question-1-answers-A">Skôr súhlasím</label>
+         </div>
+
+    <div class = "span1">
+        <input class = "buttonradio" type="radio" name="question-124-answers" id="question-124-answers-B" value="B" />
+      
+    </div>
+       <div class = "span2">
+        
+        <label for="question-1-answers-B">Skôr nesúhlasím</label>
+    </div>
+    </div>
+
+ <div class = "mainbox row">
+    <h3>Ak ma niekto vnútorne zraní, väčšinou mu to nepoviem. </h3>
+   
+    <div class = "span1">
+        <input class = "buttonradio" type="radio" name="question-125-answers" id="question-125-answers-A" value="Ac" />
+    </div>
+     <div class = "span2">
+     <label for="question-1-answers-A">Skôr súhlasím</label>
+         </div>
+
+    <div class = "span1">
+        <input class = "buttonradio" type="radio" name="question-125-answers" id="question-125-answers-B" value="B" />
+      
+    </div>
+       <div class = "span2">
+        
+        <label for="question-1-answers-B">Skôr nesúhlasím</label>
+    </div>
+    </div>
+     <div class = "mainbox row white">
+    <h3>Nechápem, prečo niektorí ľudia berú život tak vážne. </h3>
+   
+    <div class = "span1">
+        <input class = "buttonradio" type="radio" name="question-126-answers" id="question-126-answers-A" value="Axc" />
+    </div>
+     <div class = "span2">
+     <label for="question-1-answers-A">Skôr súhlasím</label>
+         </div>
+
+    <div class = "span1">
+        <input class = "buttonradio" type="radio" name="question-126-answers" id="question-126-answers-B" value="B" />
+      
+    </div>
+       <div class = "span2">
+        
+        <label for="question-1-answers-B">Skôr nesúhlasím</label>
+    </div>
+    </div>
+
+ <div class = "mainbox row">
+    <h3>Často svoje myšlienky ani nevyslovím, lebo sa mi nezdajú dosť dôležité. </h3>
+   
+    <div class = "span1">
+        <input class = "buttonradio" type="radio" name="question-127-answers" id="question-127-answers-A" value="Ac" />
+    </div>
+     <div class = "span2">
+     <label for="question-1-answers-A">Skôr súhlasím</label>
+         </div>
+
+    <div class = "span1">
+        <input class = "buttonradio" type="radio" name="question-127-answers" id="question-127-answers-B" value="B" />
+      
+    </div>
+       <div class = "span2">
+        
+        <label for="question-1-answers-B">Skôr nesúhlasím</label>
+    </div>
+    </div>
+     <div class = "mainbox row white">
+    <h3>Moji rodičia rešpektovali a podporovali keď som otvorene vyjadril pocity strachu, radosti, smútku i zlosti. 
+ </h3>
+   
+    <div class = "span1">
+        <input class = "buttonradio" type="radio" name="question-128-answers" id="question-128-answers-A" value="Axc" />
+    </div>
+     <div class = "span2">
+     <label for="question-1-answers-A">Skôr súhlasím</label>
+         </div>
+
+    <div class = "span1">
+        <input class = "buttonradio" type="radio" name="question-128-answers" id="question-128-answers-B" value="B" />
+      
+    </div>
+       <div class = "span2">
+        
+        <label for="question-1-answers-B">Skôr nesúhlasím</label>
+    </div>
+    </div>
+
+ <div class = "mainbox row">
+    <h3>Zdá sa mi, že nepresadím svoje želania tak často, ako by som chcel. </h3>
+   
+    <div class = "span1">
+        <input class = "buttonradio" type="radio" name="question-129-answers" id="question-129-answers-A" value="Ac" />
+    </div>
+     <div class = "span2">
+     <label for="question-129-answers-A">Skôr súhlasím</label>
+         </div>
+
+    <div class = "span1">
+        <input class = "buttonradio" type="radio" name="question-129-answers" id="question-129-answers-B" value="B" />
+      
+    </div>
+       <div class = "span2">
+        
+        <label for="question-1-answers-B">Skôr nesúhlasím</label>
+    </div>
+    </div>
+     <div class = "mainbox row white">
+    <h3>Príjmam pracovné pozície s menšou zodpovednosťou.  </h3>
+   
+    <div class = "span1">
+        <input class = "buttonradio" type="radio" name="question-130-answers" id="question-130-answers-A" value="Ac" />
+    </div>
+     <div class = "span2">
+     <label for="question-1-answers-A">Skôr súhlasím</label>
+         </div>
+
+    <div class = "span1">
+        <input class = "buttonradio" type="radio" name="question-130-answers" id="question-130-answers-B" value="B" />
+      
+    </div>
+       <div class = "span2">
+        
+        <label for="question-1-answers-B">Skôr nesúhlasím</label>
+    </div>
+    </div>
+
+<div class = "mainbox row">
+    <h3>Moji rodičia sa snažili ukázať mi svet skôr z horších stránok. </h3>
+   
+    <div class = "span1">
+        <input class = "buttonradio" type="radio" name="question-131-answers" id="question-131-answers-A" value="Ac" />
+    </div>
+     <div class = "span2">
+     <label for="question-131-answers-A">Skôr súhlasím</label>
+         </div>
+
+    <div class = "span1">
+        <input class = "buttonradio" type="radio" name="question-131-answers" id="question-131-answers-B" value="B" />
+      
+    </div>
+       <div class = "span2">
+        
+        <label for="question-1-answers-B">Skôr nesúhlasím</label>
+    </div>
+    </div>
+     <div class = "mainbox row white">
+    <h3>Mám viac záujmov a záľub ako ostatní ľudia, ktorých poznám. </h3>
+   
+    <div class = "span1">
+        <input class = "buttonradio" type="radio" name="question-132-answers" id="question-132-answers-A" value="Axc" />
+    </div>
+     <div class = "span2">
+     <label for="question-1-answers-A">Skôr súhlasím</label>
+         </div>
+
+    <div class = "span1">
+        <input class = "buttonradio" type="radio" name="question-132-answers" id="question-132-answers-B" value="B" />
+      
+    </div>
+       <div class = "span2">
+        
+        <label for="question-1-answers-B">Skôr nesúhlasím</label>
+    </div>
+    </div>
+
+ <div class = "mainbox row">
+    <h3>Často sa uťahujem do seba. </h3>
+   
+    <div class = "span1">
+        <input class = "buttonradio" type="radio" name="question-133-answers" id="question-133-answers-A" value="Ac" />
+    </div>
+     <div class = "span2">
+     <label for="question-1-answers-A">Skôr súhlasím</label>
+         </div>
+
+    <div class = "span1">
+        <input class = "buttonradio" type="radio" name="question-133-answers" id="question-133-answers-B" value="B" />
+      
+    </div>
+       <div class = "span2">
+        
+        <label for="question-1-answers-B">Skôr nesúhlasím</label>
+    </div>
+    </div>
+     <div class = "mainbox row white">
+    <h3>V piatok večer sedíte so známymi pri fľaške vína. Nečakane niekto z nich navrhne ísť na pár dní na výlet do hôr. Pôjdete? 
+</h3>
+   
+    <div class = "span1">
+        <input class = "buttonradio" type="radio" name="question-134-answers" id="question-134-answers-A" value="Axc" />
+    </div>
+     <div class = "span2">
+     <label for="question-1-answers-A">Skôr súhlasím</label>
+         </div>
+
+    <div class = "span1">
+        <input class = "buttonradio" type="radio" name="question-134-answers" id="question-134-answers-B" value="B" />
+      
+    </div>
+       <div class = "span2">
+        
+        <label for="question-1-answers-B">Skôr nesúhlasím</label>
+    </div>
+    </div>
+
+ <div class = "mainbox row">
+    <h3>Prijímam skôr fantastické ako logické rozhodnutia. </h3>
+   
+    <div class = "span1">
+        <input class = "buttonradio" type="radio" name="question-135-answers" id="question-135-answers-A" value="Axc" />
+    </div>
+     <div class = "span2">
+     <label for="question-1-answers-A">Skôr súhlasím</label>
+         </div>
+
+    <div class = "span1">
+        <input class = "buttonradio" type="radio" name="question-135-answers" id="question-135-answers-B" value="B" />
+      
+    </div>
+       <div class = "span2">
+        
+        <label for="question-1-answers-B">Skôr nesúhlasím</label>
+    </div>
+    </div>
+     <div class = "mainbox row white">
+    <h3>Sú chvíle, keď plačem v prítomnosti iných bez toho, aby som sa hanbil. </h3>
+   
+    <div class = "span1">
+        <input class = "buttonradio" type="radio" name="question-136-answers" id="question-136-answers-A" value="Axc" />
+    </div>
+     <div class = "span2">
+     <label for="question-1-answers-A">Skôr súhlasím</label>
+         </div>
+
+    <div class = "span1">
+        <input class = "buttonradio" type="radio" name="question-136-answers" id="question-136-answers-B" value="B" />
+      
+    </div>
+       <div class = "span2">
+        
+        <label for="question-1-answers-B">Skôr nesúhlasím</label>
+    </div>
+    </div>
+
+ <div class = "mainbox row">
+    <h3>Mám pozitívny postoj k sexu, svojmu telu a intimite. </h3>
+   
+    <div class = "span1">
+        <input class = "buttonradio" type="radio" name="question-137-answers" id="question-137-answers-A" value="Axc" />
+    </div>
+     <div class = "span2">
+     <label for="question-1-answers-A">Skôr súhlasím</label>
+         </div>
+
+    <div class = "span1">
+        <input class = "buttonradio" type="radio" name="question-137-answers" id="question-137-answers-B" value="B" />
+      
+    </div>
+       <div class = "span2">
+        
+        <label for="question-1-answers-B">Skôr nesúhlasím</label>
+    </div>
+    </div>
+     <div class = "mainbox row white">
+    <h3>Istým osobám sa človek musí podriadiť. </h3>
+   
+    <div class = "span1">
+        <input class = "buttonradio" type="radio" name="question-138-answers" id="question-138-answers-A" value="Ac" />
+    </div>
+     <div class = "span2">
+     <label for="question-1-answers-A">Skôr súhlasím</label>
+         </div>
+
+    <div class = "span1">
+        <input class = "buttonradio" type="radio" name="question-138-answers" id="question-138-answers-B" value="B" />
+      
+    </div>
+       <div class = "span2">
+        
+        <label for="question-1-answers-B">Skôr nesúhlasím</label>
+    </div>
+    </div>
+
+ <div class = "mainbox row">
+    <h3>Niekedy si želám mať výnimočných priateľov a zabávať sa netradične. </h3>
+   
+    <div class = "span1">
+        <input class = "buttonradio" type="radio" name="question-139-answers" id="question-139-answers-A" value="Axc" />
+    </div>
+     <div class = "span2">
+     <label for="question-139-answers-A">Skôr súhlasím</label>
+         </div>
+
+    <div class = "span1">
+        <input class = "buttonradio" type="radio" name="question-139-answers" id="question-139-answers-B" value="B" />
+      
+    </div>
+       <div class = "span2">
+        
+        <label for="question-1-answers-B">Skôr nesúhlasím</label>
+    </div>
+    </div>
+     <div class = "mainbox row white">
+    <h3>V mimoriadnych situáciách sa necítim dobre. </h3>
+   
+    <div class = "span1">
+        <input class = "buttonradio" type="radio" name="question-140-answers" id="question-140-answers-A" value="Ac" />
+    </div>
+     <div class = "span2">
+     <label for="question-1-answers-A">Skôr súhlasím</label>
+         </div>
+
+    <div class = "span1">
+        <input class = "buttonradio" type="radio" name="question-140-answers" id="question-140-answers-B" value="B" />
+      
+    </div>
+       <div class = "span2">
+        
+        <label for="question-1-answers-B">Skôr nesúhlasím</label>
+    </div>
+    </div>
+
+ <div class = "mainbox row">
+    <h3>Často sa nachádzam v problémových situáciách a sám seba sa pýtam, ako som sa tam dostal. 
+</h3>
+   
+    <div class = "span1">
+        <input class = "buttonradio" type="radio" name="question-141-answers" id="question-141-answers-A" value="Axc" />
+    </div>
+     <div class = "span2">
+     <label for="question-141-answers-A">Skôr súhlasím</label>
+         </div>
+
+    <div class = "span1">
+        <input class = "buttonradio" type="radio" name="question-141-answers" id="question-141-answers-B" value="B" />
+      
+    </div>
+       <div class = "span2">
+        
+        <label for="question-1-answers-B">Skôr nesúhlasím</label>
+    </div>
+    </div>
+     <div class = "mainbox row white">
+    <h3>V mnohých situáciách sa cítim bezmocný. </h3>
+   
+    <div class = "span1">
+        <input class = "buttonradio" type="radio" name="question-142-answers" id="question-142-answers-A" value="Ac" />
+    </div>
+     <div class = "span2">
+     <label for="question-1-answers-A">Skôr súhlasím</label>
+         </div>
+
+    <div class = "span1">
+        <input class = "buttonradio" type="radio" name="question-142-answers" id="question-142-answers-B" value="B" />
+      
+    </div>
+       <div class = "span2">
+        
+        <label for="question-1-answers-B">Skôr nesúhlasím</label>
+    </div>
+    </div>
+
+ <div class = "mainbox row">
+    <h3>Keď niečo hovorím, je možné, že vstupujem na klzkú plochu.  </h3>
+   
+    <div class = "span1">
+        <input class = "buttonradio" type="radio" name="question-143-answers" id="question-143-answers-A" value="Axc" />
+    </div>
+     <div class = "span2">
+     <label for="question-143-answers-A">Skôr súhlasím</label>
+         </div>
+
+    <div class = "span1">
+        <input class = "buttonradio" type="radio" name="question-143-answers" id="question-143-answers-B" value="B" />
+      
+    </div>
+       <div class = "span2">
+        
+        <label for="question-1-answers-B">Skôr nesúhlasím</label>
+    </div>
+    </div>
+    
+    <table width="450px">
+ 
+<tr>
+ 
+ <td valign="top">
+ 
+  <label for="first_name">Meno</label>
+ 
+ </td>
+ 
+ <td valign="top">
+ 
+  <input  type="text" name="first_name" maxlength="50" size="30">
+ 
+ </td>
+ 
+</tr>
+ 
+<tr>
+ 
+ <td valign="top">
+ 
+  <label for="email">Email</label>
+ 
+ </td>
+ 
+ <td valign="top">
+ 
+  <input  type="text" name="email" maxlength="80" size="30">
+ <input type="hidden" name="Source" value="Free">
+ </td>
+ 
+</tr>
+</tr>
+</table>
+    <input type="submit" value="Ďalší" />
+  </div>
+
+</form>
+</div>
+<a style = "font-size:16px;float:right;" href = "#first" id = "showterms" onclick="mytermshideable()">Všeobecné podmienky</a>
+<p style = "font-size:16px;float:right;padding-right: 20px;color: gray;">Kontakt: <a style = "font-size:16px;" href = "mailto:info@egogram.sk" id = "showcontact">info@egogram.sk</a></p>
+<br>
+<div id = "terms" style = "display:none;">
+<p style = "font-size: 20px;
+font-family: sans-serif;
+color: darkblue;
+text-align: justify;
+line-height: 1.5;">Všeobecné podmienky používania stránky Egogram.sk</p>
+<p style = "font-size: 22px;
+font-family: sans-serif;
+color: darkblue; font-weight:bold;
+text-align: justify;
+line-height: 1.5;">Prevádzkovateľ Internetovej stránky</p>
+<p style = "font-size: 20px;
+font-family: sans-serif;
+color: darkblue;
+text-align: justify;
+line-height: 1.5;">TV2000 s.r.o.<br>
+Podjavorinskej 7,<br>
+Bratislava 811 03<br>
+Slovenská republika<br>
+IČO: 35705850<br>
+DIČ: 2021003952<br>
+IČ DPH: SK2021003952<br>
+Zapísaná v obchodnom registri Okresného súdu Bratislava I, oddiel sro., Vložka číslo:  12818/B<br>
+Ďalej len „Prevádzkovateľ.“<br>
+Kontaktný e-mail: info@egogram.sk</p>
+<p style = "font-size: 22px;
+font-family: sans-serif;
+color: darkblue;font-weight:bold;
+text-align: justify;
+line-height: 1.5;">Užívateľ</p>
+<p style = "font-size: 20px;
+font-family: sans-serif;
+color: darkblue;
+text-align: justify;
+line-height: 1.5;">Užívateľom sa rozumie každý návštevník internetovej stránky www.egogram.sk (ďalej len „ Internetová stránka “).</p>
+<p style = "font-size: 22px;
+font-family: sans-serif;
+color: darkblue;
+text-align: justify;font-weight:bold;
+line-height: 1.5;">Práva a povinnosti Užívateľa</p>
+<p style = "font-size: 20px;
+font-family: sans-serif;
+color: darkblue;
+text-align: justify;
+line-height: 1.5;">Užívateľ je povinný dodržiavať Všeobecné podmienky Internetovej stránky. Používáním Internetovej stránky vyjadruje Užívateľ plný súhlas s týmito pravidlami a potvrdzuje, že si ich prečítal a porozumel im.<br><br>
+V prípade, že sa na Internetovej stránke vyskytne chyba, ktorá zabraňuje Užívateľovi v riadnom využívání Internetovej stránky, je Užívateľ oprávnený sa obrátiť na Prevádzkovateľa na jeho kontaktnom e-maili.<br><br>
+Užívateľ má možnosť odstúpiť od zmluvy s Prevádzkovateľom len do chvíle, kedy nedošlo k plneniu zo strany Prevádzkovateľa a nedošlo k vyhodnoteniu testu.<br><br>
+Užívateľ, ktorý je fyzickou osobou, súhlasí so spracovaním týchto svojich osobných údajov: meno, priezvisko, adresa elektronickej pošty, výsledok Egogram testu (ďalej spoločne všetko len ako „Osobné údaje“) a to pre účely vyhodnotenia Egogram testu, pre účely plnenia záväzkov zo zmluvy o poskytovaní služieb a pre účely zasielania obchodných odkazov Prevádzkovateľom. Osobné údaje Užívateľa nebudú odovzdávané tretím osobám. Spracovaním osobných údajov Užívateľa môže Prevádzkovateľ poveriť tretiu osobu, ako spracovateľa.<br><br>
+Užívateľ môže požiadať Prevádzkovateľa na kontaktnom e-maili o odstránenie Osobných údajov z databázy a Prevádzkovateľ je povinný Užívateľovi v čo najkratšom termíne vyhovieť.<br><br>
+
+<p style = "font-size: 22px;
+font-family: sans-serif;
+color: darkblue;
+text-align: justify;font-weight:bold;
+line-height: 1.5;">Práva a povinnosti Prevádzkovateľa</p>
+<p style = "font-size: 20px;
+font-family: sans-serif;
+color: darkblue;
+text-align: justify;
+line-height: 1.5;">Prevádzkovateľ je povinný dodržiavať Všeobecné podmienky Internetovej stránky.<br><br>
+Prevádzkovateľ si vyhradzuje právo k zmene týchto Všeobecných podmienok. Pozmenené Všeobecné podmienky potom vstupujú do platnosti dňom uveřejnenia na Internetovej stránke.<br><br>
+</p><p style = "font-size: 22px;
+font-family: sans-serif;
+color: darkblue;
+text-align: justify;font-weight:bold;
+line-height: 1.5;">Vyhodnotenie Egogram testu</p>
+<p style = "font-size: 20px;
+font-family: sans-serif;
+color: darkblue;
+text-align: justify;
+line-height: 1.5;">Vyhodnotenie testu na Internetovej stránke je podmienené zaplateným poplatku 11,50 EUR prostredníctvom elektronickej platby spoločnosti TrustPay vo forme prevodu na účet alebo platbou platobnou kartou. Užívateľ je po dokončení testu vyzvaný k platbe na stránkach spoločnosti TrustPay. Na základe úspešnej platby bude Užívateľ presmerovaný na stránku vyhodnotenia testu. Tento test si môže vytlačiť, odoslať na email alebo stiahnuť do svojho elektronického zariadenia vo formáte pdf. Výsledky testu sú k dispozícii na Internetovej stránke len jednorázovo a nie sú zálohované v databáze Prevádzkovateľa na Internetovej stránke.<br><br>
+<br>
+Tieto Všeobecné podmienky vstupujú do platnosti dobou uverejnenia na Internetovej stránke.<br><br>
+ 
+Vydané: V Bratislave dňa 16. 9. 2014
+</p>
+
+    <script src="http://code.jquery.com/jquery.js"></script>
+    <script src="../bootstrap/js/bootstrap.min.js"></script>
+  </body>
+</html>
+
