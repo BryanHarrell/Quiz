@@ -795,7 +795,6 @@ p{
          "krJA" => $first, "srJA" => $second,  "dJA"=>  $third, "pdzJA" => $fourth, "pbdJA"  => $fifth,);
     
      arsort($values);
-   ;
      
    $stuff = "";
      foreach ($values as $key => $val) {
